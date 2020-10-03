@@ -11,6 +11,7 @@ import { useStateValue } from "./StateProvider";
 import Login from "./Login.js";
 import SignUp from "./SignUp.js";
 import AdminBooking from "./AdminBooking";
+import Footer from "./Footer";
 
 function App() {
 
@@ -24,27 +25,24 @@ function App() {
           <Route path="/menu">
             <Header />
             <Menu />
+            <Footer />
           </Route>
-
-          <Route path="/about">
-            <Header />
-            <About />
-          </Route>
-
+          
           <Route path="/review">
             <Header />
             <Review />
+            <Footer />
           </Route>
 
           <Route path="/booking">
             <Header />
             <Booking />
+            <Footer />
           </Route>
 
           <Route path="/signup">
             {user ? (
               <>
-                <Header />
                 <SignUp />
               </>
             ) : (
@@ -60,6 +58,7 @@ function App() {
           <Route path="/">
             <Header />
             <Scrolling />
+            <Footer />
           </Route>
 
         </Switch>
