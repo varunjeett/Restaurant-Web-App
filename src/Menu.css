@@ -1,0 +1,78 @@
+.menu{
+    display: flex;
+}
+.menu__img{
+    flex: 0.5;
+    /* width: 760px;
+    height: 670px ; */
+    margin-bottom: 20px;
+    background-image: url("Media/menuPage.jpg");
+    /* background-size: 100% 100%; */
+    /* background-repeat: no-repeat; */
+    background-attachment: fixed;
+}
+
+.menu__img > h1{
+
+    position: relative;
+    /* left: 10px;
+    top: 20px; */
+    /* width: 700px; */
+    padding: 10px;
+    background-color: transparent;
+    color: black;
+    font-weight: bold;
+    
+    font-size: 9.3em ;
+    font-family: 'Cedarville Cursive', cursive;
+    /* border-right: 2px solid ; */
+}
+.menu__img > h5{
+    position: relative;
+    /* left: 10px;
+    top: 20px; */
+    /* width: 700px; */
+    padding: 10px;
+    background-color: transparent;
+    color: black;
+    font-weight: bold;
+    
+    font-size: 1.3em ;
+    font-family: 'Cedarville Cursive', cursive;
+    /* border-right: 2px solid ; */
+}
+.menu__img{
+    text-decoration: none;
+}
+.menu__img > h5{
+    position: relative;
+    /* left: 10px;
+    top: 10px ;
+    width: 700px; */
+    padding: 10px;
+    background-color: transparent;
+    color: black;
+    font-weight: bold;
+    
+    font-size: 1.3em ;
+    font-family: 'Cedarville Cursive', cursive;
+
+}
+.menu__card{
+    /* display: flex;
+    justify-content: flex-end; */
+    flex: 0.5;
+
+}
+
+.menu__card > img {
+
+    width: 750px;
+    height: 700px;
+    margin-left: 20px;
+    /* border-left: 9px solid black; */
+}
+
+.menu__link:hover{
+    color: red;
+}
