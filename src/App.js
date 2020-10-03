@@ -13,7 +13,9 @@ import SignUp from "./SignUp.js";
 import AdminBooking from "./AdminBooking";
 
 function App() {
-  const [{ user }, dispatch] = useStateValue();
+
+
+  const [{ user }] = useStateValue();
 
   return (
     <Router>

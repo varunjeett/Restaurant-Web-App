@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
-import DeckIcon from "@material-ui/icons/Deck";
 import "./Header.css";
-import logo from "./Media/logo.png";
+import logo from "./Media/logo.jpg";
 
 function Header() {
   return (
@@ -37,8 +36,8 @@ function Header() {
       </div>
 
       <div className="header__social">
-        <a href="">{<InstagramIcon className="icons" />}</a>
-        <a href="">{<FacebookIcon className="icons" />}</a>
+        <a href="https://www.instagram.com/"> {<InstagramIcon className="icons" />}</a>
+        <a href="https://www.facebook.com/"> {<FacebookIcon className="icons" />}</a>
         <p className="header__text">Follow Us!!!</p>
       </div>
 

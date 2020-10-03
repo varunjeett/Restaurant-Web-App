@@ -3,7 +3,7 @@ import { db } from "./firebase.js";
 import ShowBooking from "./ShowBooking.js";
 import "./AdminBooking.css";
 import { useStateValue } from "./StateProvider.js";
-import logo from "./Media/logo.png";
+import logo from "./Media/logo.jpg";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import { Link } from "react-router-dom";
 
@@ -25,9 +25,11 @@ function AdminBooking() {
   return (
     <>
       <nav className="header">
-        <a href="https://www.youtube.com/">
+          <Link to="/">
           <img className="header__logo highlight" src={logo} alt="logo of bunchOlunch" />
-        </a>
+          </Link>
+
+        <h2>Hii {user?.email} , Your Bookings</h2>
 
         <div className="header__admin highlight">
           <Link to="/signup">
@@ -37,7 +39,7 @@ function AdminBooking() {
       </nav>
 
       <div className="booking123">
-        <h2>Hii {user?.email} , Your Bookings</h2>
+        
         {bookings?.map((book) => (
           <ShowBooking book={book} />
         ))}
