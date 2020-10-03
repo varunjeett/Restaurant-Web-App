@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { db } from "./firebase.js";
 import ShowBooking from "./ShowBooking.js";
-import "./Booking.css";
+import "./AdminBooking.css";
 import { useStateValue } from "./StateProvider.js";
 import logo from "./Media/logo.png";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
@@ -36,7 +36,7 @@ function AdminBooking() {
         </div>
       </nav>
 
-      <div className="booking">
+      <div className="booking123">
         <h2>Hii {user?.email} , Your Bookings</h2>
         {bookings?.map((book) => (
           <ShowBooking book={book} />

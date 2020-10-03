@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './Review.css'
 import { db } from "./firebase";
 
-function Review() {   
+function Review() {
 
     const StarRating = ({ count, value,
         inactiveColor = '#ddd',
@@ -35,16 +35,12 @@ function Review() {
         )
     }
 
-    const [rating, setRating] = useState(0);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [number, setNumber] = useState("");
     const [review, setReview] = useState("");
+    const [rating, setRating] = useState("");
 
-    const handleChange = (value) => {
-        setRating(value);
-    }
-    
     const saveReview = (event) => {
         event.preventDefault();
 
@@ -68,17 +64,17 @@ function Review() {
         setEmail("");
         setNumber("");
         setReview("");
-        // setRating(0) ;
+        setRating("");
     };
 
 
     return (
         <div className="review">
-            <div className="review__img">
-                <h1> Your Experience </h1>
-
-                <div className="review__form"  >
-
+            <div className="review__cantainor"  >
+                <div className="review__heading">
+                    <h1> Your Experience </h1>
+                </div>
+                <div className="review__form">
                     <form className="review__table">
 
                         <label>Name</label>
@@ -98,21 +94,21 @@ function Review() {
                         <textarea value={review}
                             onChange={(e) => setReview(e.target.value)} />
                         <div className="review__star">
-                            <h4>Rating:</h4> 
+                            <h4>Rating:</h4>
                             <StarRating
                                 count={5}
                                 size={40}
                                 value={rating}
                                 activeColor={'yellow'}
                                 inactiveColor={'#ddd'}
-                                onChange={handleChange} />
+                                onChange={(e) => setRating(e.target.value)} />
                         </div>
 
                         <input className="review__button" type="submit" onClick={saveReview} />
-                       
                     </form>
 
                 </div>
+
             </div>
         </div>
     )

@@ -1,5 +1,5 @@
 .header {
-  background-color: papayawhip;
+  background-color: whitesmoke;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -21,11 +21,11 @@
 }
 
 
-.booking {
+.booking123 {
     padding: 20px 80px;
 }
 
-.booking > h1 {
+.booking123 > h1 {
     margin: 30px 0;
 }
 

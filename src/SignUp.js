@@ -36,9 +36,7 @@ function Login() {
 
                 <h1>Sign Up</h1>
                     <form>
-                        <h5>E-mail</h5>
                         <input value={email} onChange={event => setEmail(event.target.value)} placeholder="Enter your E-mail" type="email" />
-                        <h5>Password</h5>
                         <input value={password} onChange={event => setPassword(event.target.value)} placeholder="Enter your Password" type="password" />
                        <button onClick={register} type="submit" className="signin__button">Sign Up</button> 
                     </form>
