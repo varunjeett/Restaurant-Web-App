@@ -41,7 +41,10 @@ function App() {
 
           <Route path="/signup">
             {user ? (
-              <SignUp />
+              <>
+                <Header />
+                <SignUp />
+              </>
             ) : (
               <>
                 <Header />
