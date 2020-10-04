@@ -10,9 +10,10 @@ function Booking() {
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
 
-
-
     const DoneBooking = (event) => {
+
+    
+
         event.preventDefault();
 
         if (name && email && number && date && time) {
@@ -62,11 +63,11 @@ function Booking() {
                             <input type="tel" value={number}
                                 onChange={(e) => setNumber(e.target.value)} />
 
-                            <label>Timing(date and time):</label>
+                            <label>Date:</label>
                             <input type="text" value={date} placeholder="Date-Month"
                                 onChange={(e) => setDate(e.target.value)} />
 
-                            <label>Timing(date and time):</label>
+                            <label>Time:</label>
                             <input type="text" value={time} placeholder="Start-Time: Hour-Min End-Time: Hour-Min "
                                 onChange={(e) => setTime(e.target.value)} />
 

@@ -6,6 +6,7 @@ import { useStateValue } from "./StateProvider.js";
 import logo from "./Media/logo.jpg";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import { Link } from "react-router-dom";
+import FeedbackIcon from "@material-ui/icons/Feedback";
 
 function AdminBooking() {
   const [bookings, setBooking] = useState([]);
@@ -25,11 +26,21 @@ function AdminBooking() {
   return (
     <>
       <nav className="header">
-          <Link to="/">
-          <img className="header__logo highlight" src={logo} alt="logo of bunchOlunch" />
-          </Link>
+        <Link to="/admin">
+          <img
+            className="header__logo highlight"
+            src={logo}
+            alt="logo of bunchOlunch"
+          />
+        </Link>
 
         <h2>Hii {user?.email} , Your Bookings</h2>
+
+        <div className="header__admin highlight">
+          <Link to="/adminreview">
+            <FeedbackIcon className="header__add__icon" fontSize="large" />
+          </Link>
+        </div>
 
         <div className="header__admin highlight">
           <Link to="/signup">
@@ -38,8 +49,7 @@ function AdminBooking() {
         </div>
       </nav>
 
-      <div className="booking123">
-        
+      <div className="single__booking">
         {bookings?.map((book) => (
           <ShowBooking book={book} />
         ))}

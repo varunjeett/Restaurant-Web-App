@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import About from './About'
 import ShowReview from './ShowReview'
 import './Scrolling.css'
 import { db } from "./firebase.js"
@@ -23,7 +22,6 @@ function Scrolling() {
 
         <div className="scrolling">
             <div className="scrolling__firstPage"></div>
-            <About />
             <div className="scrolling__thirdPage">
                 <h2>
                     We prepare rare exotic Indian Punjabi dishes with the finest ingredients and selected herbs, marinated and sifted using only the best fresh vegetables, Soya food, and high quality Indian spices for long lasting and rich experience.

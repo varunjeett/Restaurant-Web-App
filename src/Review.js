@@ -4,42 +4,11 @@ import { db } from "./firebase";
 
 function Review() {
 
-    const StarRating = ({ count, value,
-        inactiveColor = '#ddd',
-        size = 24,
-        activeColor = '#f00', onChange }) => {
-
-        // short trick 
-        const stars = Array.from({ length: count }, () => '🟊')
-
-        // Internal handle change function
-        const handleChange = (value) => {
-            onChange(value + 1);
-        }
-
-        return (
-            <div>
-                {stars.map((s, index) => {
-                    let style = inactiveColor;
-                    if (index < value) {
-                        style = activeColor;
-                    }
-                    return (
-                        <span className={"star"}
-                            key={index}
-                            style={{ color: style, width: size, height: size, fontSize: size }}
-                            onClick={() => handleChange(index)}>{s}</span>
-                    )
-                })}
-            </div>
-        )
-    }
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [number, setNumber] = useState("");
     const [review, setReview] = useState("");
-    const [rating, setRating] = useState("");
 
     const saveReview = (event) => {
         event.preventDefault();
@@ -50,7 +19,8 @@ function Review() {
                 email: email,
                 number: number,
                 review: review,
-                rating: rating,
+                timestamp : Date.getTime()
+                
             })
                 .then(alert("Review Saved Successfully"))
                 .catch((error) => {
@@ -64,7 +34,6 @@ function Review() {
         setEmail("");
         setNumber("");
         setReview("");
-        setRating("");
     };
 
 
@@ -93,16 +62,7 @@ function Review() {
                         <label>Review</label>
                         <textarea value={review}
                             onChange={(e) => setReview(e.target.value)} />
-                        <div className="review__star">
-                            <h4>Rating:</h4>
-                            <StarRating
-                                count={5}
-                                size={40}
-                                value={rating}
-                                activeColor={'yellow'}
-                                inactiveColor={'#ddd'}
-                                onChange={(e) => setRating(e.target.value)} />
-                        </div>
+                        
 
                         <input className="review__button" type="submit" onClick={saveReview} />
                     </form>

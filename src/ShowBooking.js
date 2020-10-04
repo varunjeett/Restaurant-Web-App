@@ -11,7 +11,12 @@ function ShowBooking({ book }) {
 
       <h3>Email : {book.data.email}</h3>
 
+      <h3>Date : {book.data.date}</h3>
+
+      <h3>Time : {book.data.time}</h3>
+
       <h3>ID : {book.id}</h3>
+
     </div>
   );
 }
