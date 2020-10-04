@@ -16,13 +16,8 @@ function Menu() {
                 
             </div>
 
-<<<<<<< HEAD
             <div className="menu__card"> 
                 <img src={menuCard} />
-=======
-            <div className="menu__card">
-                <img src={menuCard} alt="menu card"/>
->>>>>>> 0f7a05450fdd4ab7515507e47be74a54bd2249a9
             </div>
         </div>
     )
