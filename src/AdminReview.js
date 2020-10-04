@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { db } from "./firebase.js";
-import ShowBooking from "./ShowBooking.js";
-import "./AdminBooking.css";
-import { useStateValue } from "./StateProvider.js";
+import { db } from "./firebase";
+import { useStateValue } from "./StateProvider";
 import logo from "./Media/logo.jpg";
-import PersonAddIcon from "@material-ui/icons/PersonAdd";
+import ShowReview from "./ShowReview";
 import { Link } from "react-router-dom";
-import FeedbackIcon from "@material-ui/icons/Feedback";
+import PersonAddIcon from "@material-ui/icons/PersonAdd";
+import "./AdminReview.css";
 
-function AdminBooking() {
-  const [bookings, setBooking] = useState([]);
+function AdminReview() {
+  const [reviews, setReviews] = useState([]);
   const [{ user }] = useStateValue();
 
   useEffect(() => {
-    db.collection("Bookings")
+    db.collection("Reviews")
       .orderBy("timestamp", "desc")
       .onSnapshot((snapshot) =>
-        setBooking(
+        setReviews(
           snapshot.docs.map((doc) => ({
             id: doc.id,
             data: doc.data(),
@@ -26,7 +25,7 @@ function AdminBooking() {
   }, []);
 
   return (
-    <>
+    <div>
       <nav className="header">
         <Link to="/admin">
           <img
@@ -36,13 +35,7 @@ function AdminBooking() {
           />
         </Link>
 
-        <h2>Hii {user?.email} , Your Bookings</h2>
-
-        <div className="header__admin highlight">
-          <Link to="/adminreview">
-            <FeedbackIcon className="header__add__icon" fontSize="large" />
-          </Link>
-        </div>
+        <h2>Hii {user?.email} , Your Reviews</h2>
 
         <div className="header__admin highlight">
           <Link to="/signup">
@@ -51,13 +44,13 @@ function AdminBooking() {
         </div>
       </nav>
 
-      <div className="single__booking">
-        {bookings?.map((book) => (
-          <ShowBooking book={book} />
+      <div className="single__review">
+        {reviews?.map((rev) => (
+          <ShowReview rev={rev} />
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
-export default AdminBooking;
+export default AdminReview;
