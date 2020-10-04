@@ -1,94 +1,48 @@
-.login{
-    background-color: white;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.signin{
+    height: 100vh;
+    background-color: #f8f8f8;
+    display: grid;
+    place-items: center;
 }
 
-.login__container{
-    display: flex;
-    margin-top: 70px;
-    flex-direction: column;
-    height: fit-content;
-    width: 300px;
-    padding: 20px;
-    border:1px solid lightgrey;
-    border-radius: 2px;
+.signin__container{
+display: flex;
+  flex-direction: column;
+  padding: 75px;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.login__logo{
-    margin-top:20px;
-    margin-bottom:20px;
-    width: 200px ; 
-    object-fit: contain ;
+.signin__logo{
+    object-fit: contain;
+    height: 250px;
+    margin-top: -40px;
 }
 
-.login__container > h1 {
+.signin__container > h1 {
     font-family: 'Architects Daughter', cursive;
-    font-weight: 500;
-    margin-bottom: 20px;
+    font-weight: 400;
 }
 
-.login__container > form > h5 {
-    font-size: medium;
-    margin-bottom: 15px;
-}
-
-.login__container > form > input {
-    border-radius:2px;
+.signin__container >  input {
+    margin: 5px;
     height: 30px;
-    margin-bottom: 10px;
-    background-color: white;
-    width:97%;
 }
 
 
-.seperator{
-    position: relative;
-    z-index: 0;
-}
-
-.seperator__div{
-    z-index: 1;
-    font-weight: 500;
-    text-align: center;
-    font-weight: 500;
-    size: 10px ;
-    color: grey;
-}
-
-
-
-
-.login__container > p {
-    margin-top: 15px;
-    font-size: 12px ;
-}
-
-.signin__button {
-    background:#f0c14b;
-    border-radius:2px;
-    width:100%;
-    height:50px;
-    border:1px solid;
-    margin-top:10px;
-    font-family: 'Architects Daughter', cursive;
-    border-color: #a88734 #9c7e31 #846a29;
-    color: black;
-}
-
-span{
-    align-items: center ;
-    width: 300px;
-}
-.signin__button:hover  {
-    font-weight: bold;
-    background-color: #f1b314;
-    
-}
-
-.seperator__title{
-    margin: -1px 0px 0px;
-    align-items:center;
-}
+.signin__container > Button {
+    margin-top: 25px;
+    text-transform: inherit !important;
+    background-color: #0a8d48 !important;
+    color: white;
+  }
+  
+  .signin__container > Button:hover{
+    margin-top: 25px;
+    text-transform: inherit !important;
+    background-color: #0a8d48 !important;
+    color: white;
+  }
+  

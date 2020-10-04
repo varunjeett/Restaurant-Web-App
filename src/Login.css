@@ -39,3 +39,11 @@
   background-color: #0a8d48 !important;
   color: white;
 }
+
+.login__container > Button:hover{
+  margin-top: 25px;
+  text-transform: inherit !important;
+  background-color: #0a8d48 !important;
+  color: white;
+}
+
