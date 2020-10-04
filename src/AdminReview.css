@@ -14,19 +14,18 @@
   object-fit: contain;
 }
 
-.header__add__icon{
-    padding: 5px;
-    height: 100px !important;
-    color: black;
+.header__add__icon {
+  padding: 5px;
+  height: 100px !important;
+  color: black;
 }
 
-
-.single__booking {
-    padding: 20px 80px;
+.single__review {
+  padding: 20px 80px;
 }
 
-.single__booking > h1 {
-    margin: 30px 0;
+.single__review > h1 {
+  margin: 30px 0;
 }
 
 .highlight:hover {

@@ -5,16 +5,16 @@ import Scrolling from "./Scrolling";
 import Menu from "./Menu";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Review from "./Review";
-import About from "./About";
 import Booking from "./Booking";
 import { useStateValue } from "./StateProvider";
 import Login from "./Login.js";
 import SignUp from "./SignUp.js";
 import AdminBooking from "./AdminBooking";
 import Footer from "./Footer";
+import AdminReview from "./AdminReview";
 
 function App() {
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user }] = useStateValue();
 
   return (
     <Router>
@@ -25,7 +25,7 @@ function App() {
             <Menu />
             <Footer />
           </Route>
-          
+
           <Route path="/review">
             <Header />
             <Review />
@@ -51,6 +51,19 @@ function App() {
             )}
           </Route>
 
+          <Route path="/adminreview">
+            {user ? (
+              <>
+                <AdminReview />
+              </>
+            ) : (
+              <>
+                <Header />
+                <Scrolling />
+              </>
+            )}
+          </Route>
+
           <Route path="/admin">{!user ? <Login /> : <AdminBooking />}</Route>
 
           <Route path="/">
@@ -58,7 +71,6 @@ function App() {
             <Scrolling />
             <Footer />
           </Route>
-
         </Switch>
       </div>
     </Router>
