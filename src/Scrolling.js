@@ -2,22 +2,7 @@ import React, { useState, useEffect } from 'react'
 import About from './About'
 import ShowReview from './ShowReview'
 import './Scrolling.css'
-import { db } from "./firebase.js"
-
 function Scrolling() {
-    const [reviews, setReviews] = useState([]);
-    useEffect(() => {
-        db.collection("Reviews")
-            .onSnapshot((snapshot) =>
-                setReviews(
-                    snapshot.docs.map((doc) => ({
-                        id: doc.id,
-                        data: doc.data(),
-                    }))
-                )
-            );
-    }, [])
-
 
     return (
 
@@ -35,14 +20,8 @@ function Scrolling() {
                     Wah Ji Wah is a real delicacy for the lovers of Indian Punjabi Cuisines.
                 </h2>
             </div>
-            {/* <div className="scrolling__fourPage"></div> */}
-
             <div className="scrolling__sixPage">
-                <div className="reviews__review">
-                    {reviews?.map((rev) => (
-                        <ShowReview rev={rev} />
-                    ))}
-                </div>
+
                 <h2> Reviews: </h2>
                 <li>
                     <ul>

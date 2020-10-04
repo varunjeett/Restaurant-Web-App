@@ -39,7 +39,7 @@ function Review() {
     const [email, setEmail] = useState("");
     const [number, setNumber] = useState("");
     const [review, setReview] = useState("");
-    const [rating, setRating] = useState("");
+
 
     const saveReview = (event) => {
         event.preventDefault();
@@ -50,7 +50,7 @@ function Review() {
                 email: email,
                 number: number,
                 review: review,
-                rating: rating,
+
             })
                 .then(alert("Review Saved Successfully"))
                 .catch((error) => {
@@ -64,18 +64,22 @@ function Review() {
         setEmail("");
         setNumber("");
         setReview("");
-        setRating("");
+
     };
 
 
     return (
         <div className="review">
+
             <div className="review__cantainor"  >
+
                 <div className="review__heading">
                     <h1> Your Experience </h1>
                 </div>
+
+
                 <div className="review__form">
-                    <form className="review__table">
+                    <form className="review__inner__form">
 
                         <label>Name</label>
                         <input type="text" value={name}
@@ -93,25 +97,21 @@ function Review() {
                         <label>Review</label>
                         <textarea value={review}
                             onChange={(e) => setReview(e.target.value)} />
-                        <div className="review__star">
-                            <h4>Rating:</h4>
-                            <StarRating
-                                count={5}
-                                size={40}
-                                value={rating}
-                                activeColor={'yellow'}
-                                inactiveColor={'#ddd'}
-                                onChange={(e) => setRating(e.target.value)} />
-                        </div>
-
-                        <input className="review__button" type="submit" onClick={saveReview} />
                     </form>
-
                 </div>
+                <input className="review__button" type="submit" onClick={saveReview} />
+
 
             </div>
+
         </div>
     )
 }
+
+{/* 
+
+
+
+*/}
 
 export default Review

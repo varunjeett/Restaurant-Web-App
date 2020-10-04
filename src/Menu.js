@@ -16,7 +16,7 @@ function Menu() {
                 
             </div>
 
-            <div className="menu__card">
+            <div className="menu__card"> 
                 <img src={menuCard} />
             </div>
         </div>

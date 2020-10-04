@@ -46,6 +46,7 @@ function Booking() {
                 <div className="booking__img" >
                     <h2>Let us serve you better</h2>
                     <p>Don’t wait in a line to enjoy your meal.<br />  Reserve a table in advance with us: </p>
+                </div>  
                     <div className="booking__form"  >
                         <form className="booking__table">
 
@@ -76,7 +77,6 @@ function Booking() {
                     </div>
                 </div>
             </div>
-        </div>
     )
 }
 
