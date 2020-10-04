@@ -6,6 +6,7 @@ import ShowReview from "./ShowReview";
 import { Link } from "react-router-dom";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import "./AdminReview.css";
+import HomeIcon from "@material-ui/icons/Home";
 
 function AdminReview() {
   const [reviews, setReviews] = useState([]);
@@ -27,7 +28,7 @@ function AdminReview() {
   return (
     <div>
       <nav className="header">
-        <Link to="/admin">
+      <Link to="/">
           <img
             className="header__logo highlight"
             src={logo}
@@ -35,13 +36,27 @@ function AdminReview() {
           />
         </Link>
 
-        <h2>Hii {user?.email} , Your Reviews</h2>
+        <h2>Hii <span className="user__name">{user?.email}</span> , Your Bookings</h2>
 
-        <div className="header__admin highlight">
-          <Link to="/signup">
-            <PersonAddIcon className="header__add__icon" fontSize="large" />
+        <div className="header__admin">
+          <Link  className="header__admin__link" to="/admin">
+            <div className="header__admin__box">
+              <HomeIcon className="header__add__icon" fontSize="large" />
+              <h5>Admin Home</h5>
+            </div>
           </Link>
         </div>
+
+        <div className="header__admin">
+          <Link className="header__admin__link" to="/signup">
+            <div className="header__admin__box">
+              <PersonAddIcon className="header__add__icon" fontSize="large" />
+              <h5>Create New Admin</h5>
+            </div>
+          </Link>
+        </div>
+
+
       </nav>
 
       <div className="single__review">
