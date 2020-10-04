@@ -45,7 +45,6 @@ function Booking() {
             <div className="booking__box">
                 <div className="booking__img" >
                     <h2>Let us serve you better</h2>
-                    <p>Don’t wait in a line to enjoy your meal.<br />  Reserve a table in advance with us: </p>
                 </div>  
                     <div className="booking__form"  >
                         <form className="booking__table">
@@ -53,26 +52,29 @@ function Booking() {
                             <label>Name</label>
                             <input type="text" value={name}
                                 onChange={(e) => setName(e.target.value)}
+                                placeholder="Your Name"
                             />
 
                             <label>Email</label>
                             <input type="email" value={email}
-                                onChange={(e) => setEmail(e.target.value)} />
+                                onChange={(e) => setEmail(e.target.value)} 
+                                placeholder="Your Email"/>
 
                             <label>Mobile</label>
                             <input type="tel" value={number}
-                                onChange={(e) => setNumber(e.target.value)} />
+                                onChange={(e) => setNumber(e.target.value)} 
+                                placeholder="Your Mobile"/>
 
-                            <label>Timing(date and time):</label>
-                            <input type="text" value={date} placeholder="Date-Month"
+                            <label>Date</label>
+                            <input type="text" value={date} placeholder="Date/Month"
                                 onChange={(e) => setDate(e.target.value)} />
 
-                            <label>Timing(date and time):</label>
-                            <input type="text" value={time} placeholder="Start-Time: Hour-Min End-Time: Hour-Min "
+                            <label>Time</label>
+                            <input type="text" value={time} placeholder="Check-In Time"
                                 onChange={(e) => setTime(e.target.value)} />
 
 
-                            <button className="booking__button" type="submit" onClick={DoneBooking}> Book Now! ! !</button>
+                            <input className="booking__button" type="submit" onClick={DoneBooking}/>
                         </form>
                     </div>
                 </div>
