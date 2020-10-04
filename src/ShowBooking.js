@@ -15,7 +15,7 @@ function ShowBooking({ book }) {
 
       <h3>Time : {book.data.time}</h3>
 
-      <h3>ID : {book.id}</h3>
+      <h4>ID : {book.id}</h4>
 
     </div>
   );

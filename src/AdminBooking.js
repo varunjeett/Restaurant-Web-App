@@ -13,14 +13,16 @@ function AdminBooking() {
   const [{ user }] = useStateValue();
 
   useEffect(() => {
-    db.collection("Booking").onSnapshot((snapshot) =>
-      setBooking(
-        snapshot.docs.map((doc) => ({
-          id: doc.id,
-          data: doc.data(),
-        }))
-      )
-    );
+    db.collection("Bookings")
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) =>
+        setBooking(
+          snapshot.docs.map((doc) => ({
+            id: doc.id,
+            data: doc.data(),
+          }))
+        )
+      );
   }, []);
 
   return (

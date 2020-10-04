@@ -12,14 +12,16 @@ function AdminReview() {
   const [{ user }] = useStateValue();
 
   useEffect(() => {
-    db.collection("Review").onSnapshot((snapshot) =>
-      setReviews(
-        snapshot.docs.map((doc) => ({
-          id: doc.id,
-          data: doc.data(),
-        }))
-      )
-    );
+    db.collection("Reviews")
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) =>
+        setReviews(
+          snapshot.docs.map((doc) => ({
+            id: doc.id,
+            data: doc.data(),
+          }))
+        )
+      );
   }, []);
 
   return (
