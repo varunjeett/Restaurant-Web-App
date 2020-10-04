@@ -52,22 +52,25 @@ function Booking() {
                             <label>Name</label>
                             <input type="text" value={name}
                                 onChange={(e) => setName(e.target.value)}
+                                placeholder="Your Name"
                             />
 
                             <label>Email</label>
                             <input type="email" value={email}
-                                onChange={(e) => setEmail(e.target.value)} />
+                                onChange={(e) => setEmail(e.target.value)} 
+                                placeholder="Your Email"/>
 
                             <label>Mobile</label>
                             <input type="tel" value={number}
-                                onChange={(e) => setNumber(e.target.value)} />
+                                onChange={(e) => setNumber(e.target.value)} 
+                                placeholder="Your Mobile"/>
 
                             <label>Date</label>
-                            <input type="text" value={date} placeholder="Date-Month"
+                            <input type="text" value={date} placeholder="Date/Month"
                                 onChange={(e) => setDate(e.target.value)} />
 
                             <label>Time</label>
-                            <input type="text" value={time} placeholder="Start-Time: Hour-Min End-Time: Hour-Min "
+                            <input type="text" value={time} placeholder="Check-In Time"
                                 onChange={(e) => setTime(e.target.value)} />
 
 
