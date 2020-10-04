@@ -1,89 +1,160 @@
-.booking {
-    display: grid;
-    place-items: center;
-    background-image: url("Media/booking3.JPG");
+.booking{
     width: 100%;
-    height: 555px ;
-    background-size: 100% 100%;
+    height: 700px;
+    align-items: center;
+    place-content: center;
+    background-image: url("Media/booking3.JPG");
     background-attachment: fixed;
-}
-/* .booking__img> h2{
-    text-align: center;
-    top: 20px;
-    width: 700px;
-    padding: 10px;
-    background-color: transparent;
-    color: black;   
-    font-weight: bold;
-    letter-spacing: 10px;
-    font-size: 1.9em ;
-    font-family: 'Cedarville Cursive', cursive;
-    border-bottom: 2px solid ;
+    background-size: 100% 100%;
+    display: grid;
+    place-content: center;
 }
 
-.booking__img> p{
-    top: 40px;
-    width: 800px;
-    padding: 10px;
-    background-color: transparent;
-    color: black;
-    font-weight: bold;
-    letter-spacing: 7px;
-    font-size: 1.0em ;
-    font-family: 'Cedarville Cursive', cursive;
-    
+.booking__box{
+    height: fit-content;
+    align-items: center;
+    text-align: center;
 }
 
 .booking__form{
-    top: 40px;
-    width: 600px;     
-    padding: 10px;
-    background-color: transparent;
-    color: black;
-    font-weight: bold;
-    letter-spacing: 7px;
-    font-size: 1.2em ;
-    font-family: 'Cedarville Cursive', cursive;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 
 }
 
 .booking__table{
+
     display: flex;
     flex-direction: column;
+    text-align: left;
+    margin: 30px;
+    color: rgb(11, 4, 29);
+    font-weight: bold;
+    letter-spacing: 10px;
+    font-size: 1.7em ;
+    font-family: 'Cedarville Cursive', cursive;
 
 }
+
+
+.booking__img > h2{
+
+    font-weight: bold;
+    letter-spacing: 10px;
+    font-size: 2.8em ;
+    font-family: 'Cedarville Cursive', cursive;
+    border-bottom: 2px solid ;
+    color: rgb(11, 4, 29);
+    
+}
+
+.booking__button{
+    align-self: center;
+}
+
 
 .booking__table > input{
-    display: grid;
-    place-items: center;
-    width: 100%;
-    padding: 8px 10px;
-    margin: 8px 0;
     background-color: rgb(255, 255, 255, 0.6);
-    color: black;
-    border-radius: 4px;
+    width: 650px;
+    height: 30px;
 }
 
-
-button{
-    margin-top: 40px;
+ input[type = submit]{
+    margin-top: 10px;   
     border-radius: 4px;
-    font-weight: 300;
-    font-size: large;
-    align-self: center;
-    align-content: center;
-    font-family: 'Cedarville Cursive', cursive;
-    width: 150px;
+    font-weight: 200;
+    width: 30%;
     background-color: #f0c14b;
     border: 1px solid ;
     border-color: #a88734 #9c7e31 #846a29;
-    padding: 4px 7px;
+    padding: 7px 7px;
 
 }
-button:hover {
-    font-family: 'Cedarville Cursive', cursive; 
-    font-weight: bold;
-    background-color: #f1b314;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+@media screen and (max-width:960px){
+
+
+    .booking__box{
+        height: fit-content;
+        width: 300px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .booking__form{
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    
+    }
+
+    .booking_table > label{
+        display: flex;
+        flex-direction: row;
+        margin: 3px;
+        color: white;
+        font-weight: bold;
+        letter-spacing: 10px;
+        font-size: 1.0em;
+        font-family: 'Cedarville Cursive', cursive;
+    }
+    
+    .booking__table {
+    
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin: 30px;
+        color: rgb(11, 4, 29);
+        font-weight: bold;
+        letter-spacing: 10px;
+        font-size: 1.5em ;
+        font-family: 'Cedarville Cursive', cursive;
+    
+    }
+
+    
+    
+    .booking__img > h2{
+        text-align: center;  
+        font-weight: bold;
+        letter-spacing: 10px;
+        color: rgb(11, 4, 29);
+        font-size: 2.0em ;
+        font-family: 'Cedarville Cursive', cursive;
+        border-bottom: 2px solid ;   
+    }
+    
+    .booking__button{
+        /* padding: 10px; */
+        align-self: center;
+    }
+    
+    
+    .booking__table > input{
+        background-color: rgb(255, 255, 255, 0.6);
+        width: 300px;
+        height: 30px;
+    }
+    
+     input[type = submit]{
+        margin-top: 10px;
+        margin-left: -5%;
+        border-radius: 4px;
+        font-weight: 200;
+        width: 30%;
+        background-color: #f0c14b;
+        border: 1px solid ;
+        border-color: #a88734 #9c7e31 #846a29;
+        padding: 7px 7px;
+    }
+
+
+
 }
- */
