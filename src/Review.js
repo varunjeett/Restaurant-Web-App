@@ -1,75 +1,130 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Review.css";
 import { db } from "./firebase";
+import * as Yup from "yup";
+import { Formik } from "formik";
 
-function Review() {
+const Review = () => (
+  
+  <Formik
+    initialValues={{ name: "", number: "", email: "", fb: "" }}
     
-  var obj = new Date();
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [number, setNumber] = useState("");
-  const [review, setReview] = useState("");
-
-  const saveReview = (event) => {
-    event.preventDefault();
-
-    if (name && email && number && review) {
+    onSubmit={(values, { resetForm }) => {
       db.collection("Reviews")
         .add({
-          name: name,
-          email: email,
-          number: number,
-          review: review,
-          timestamp: obj.getTime(),
+          name: values.name,
+          number: values.number,
+          email: values.email,
+          fb: values.fb,
+          timestamp: new Date().getTime(),
         })
-        .then(alert("Review Saved Successfully"))
+        .then(alert("Your Feedback is Valuable For Us !!!"))
         .catch((error) => {
           alert(error.message);
         });
-    } else {
-      alert("Please fill all the fields properly");
-    }
-  }
+      resetForm({ values: "" });
+    }}
+    validationSchema={Yup.object().shape({
+      name: Yup.string().required("Name is required"),
+      email: Yup.string().email(),
+      number: Yup.string().length(10, "Length should be equal to 10"),
+      fb: Yup.string().required("Feedback is required"),
+    })}
+  >
+    {(props) => {
+      const {
+        values,
+        touched,
+        errors,
+        handleChange,
+        handleBlur,
+        handleSubmit,
+      } = props;
 
-    return (
+      return (
         <div className="review">
-
-            <div className="review__cantainor"  >
-
-                <div className="review__heading">
-                    <h1> Your Experience </h1>
-                </div>
-
-
-                <div className="review__form">
-                    <form className="review__inner__form">
-
-                        <label>Name</label>
-                        <input type="text" value={name}
-                            onChange={(e) => setName(e.target.value)}
-                        />
-
-                        <label>Email</label>
-                        <input type="email" value={email}
-                            onChange={(e) => setEmail(e.target.value)} />
-
-                        <label>Mobile</label>
-                        <input type="tel" value={number}
-                            onChange={(e) => setNumber(e.target.value)} />
-
-                        <label>Review</label>
-                        <textarea value={review}
-                            onChange={(e) => setReview(e.target.value)} />
-                    </form>
-                </div>
-                <input className="review__button" type="submit" onClick={saveReview} />
-
-
+          <div className="review__cantainor">
+            
+            <div className="review__heading">
+              <h1> Your Experience </h1>
             </div>
 
-        </div>
-  
-  );
-}
+            <div className="review__form">
+              <form onSubmit={handleSubmit} className="review__inner__form">
+                
+                <div className="inputform">
+                  <label htmlFor="name">Name:</label>
+                  <input
+                    name="name"
+                    type="text"
+                    value={values.name}
+                    placeholder=" Enter your Name"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  {errors.name && touched.name && (
+                    <div className="input-feedback">*{errors.name}</div>
+                  )}
+                </div>
 
-export default Review
+                <div className="inputform">
+                  <label htmlFor="email">Email (Optional):</label>
+                  <input
+                    name="email"
+                    type="email"
+                    value={values.email}
+                    placeholder=" Enter your Email"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  {errors.email && touched.email && (
+                    <div className="input-feedback">*{errors.email}</div>
+                  )}
+                </div>
+
+                <div className="inputform">
+                  <label htmlFor="number">Contact No. (Optional):</label>
+                  <input
+                    name="number"
+                    type="tel"
+                    value={values.number}
+                    placeholder=" Enter your Contact No."
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  {errors.number && touched.number && (
+                    <div className="input-feedback">*{errors.number}</div>
+                  )}
+                </div>
+
+                <div className="inputform">
+                  <label htmlFor="fb">Feedback:</label>
+                  <input
+                    name="fb"
+                    type="text"
+                    value={values.fb}
+                    placeholder=" Type Here"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  {errors.fb && touched.fb && (
+                    <div className="input-feedback">*{errors.fb}</div>
+                  )}
+                </div>
+              </form>
+            </div>
+            
+            <input
+              className="review__button"
+              type="submit"
+              onClick={handleSubmit}
+            />
+
+          </div>
+        </div>
+      );
+    }}
+  </Formik>
+);
+
+export default Review;
