@@ -1,85 +1,145 @@
-import React, { useState } from "react";
+import React from "react";
 import { db } from "./firebase";
 import "./Booking.css";
+import * as Yup from "yup";
+import { Formik } from "formik";
 
-function Booking() {
+const Booking = () => (
+  <Formik
+    initialValues={{ name: "", number: "", email: "", date: "", time: "" }}
+    onSubmit={(values, { resetForm }) => {
+      db.collection("Bookings")
+        .add({
+          name: values.name,
+          number: values.number,
+          email: values.email,
+          time: values.time,
+          date: values.date,
+          timestamp: new Date().getTime(),
+        })
+        .then(
+          alert("Booking Done, We'll Be Waiting For You !!!")
+        )
+        .catch((error) => {
+          alert(error.message);
+        });
+      resetForm({ values: "" });
+    }}
+    validationSchema={Yup.object().shape({
+      name: Yup.string().required("Name is required"),
+      email: Yup.string().email(),
+      number: Yup.string()
+        .required("Number is required")
+        .length(10, "Length should be equal to 10"),
+      date: Yup.string().required("Date is required"),
+      time: Yup.string().required("Arrival Time is required"),
+    })}
+  >
+    {(props) => {
+      const {
+        values,
+        touched,
+        errors,
+        handleChange,
+        handleBlur,
+        handleSubmit,
+      } = props;
 
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [number, setNumber] = useState("");
-    const [date, setDate] = useState("");
-    const [time, setTime] = useState("");
-
-
-
-    const DoneBooking = (event) => {
-        event.preventDefault();
-
-        if (name && email && number && date && time) {
-            db.collection("Booking").add({
-                name: name,
-                email: email,
-                number: number,
-                date: date,
-                time:time,
-
-            })
-                .then(alert("Booking Done Successfully"))
-                .catch((error) => {
-                    alert(error.message);
-                });
-        }
-        else {
-            alert("Please fill all the fields properly");
-        }
-        setName("");
-        setEmail("");
-        setNumber("");
-        setTime("");
-        setDate(""); 
-
-    };
-
-    return (
+      return (
         <div className="booking">
-            <div className="booking__box">
-                <div className="booking__img" >
-                    <h2>Let us serve you better</h2>
-                </div>  
-                    <div className="booking__form"  >
-                        <form className="booking__table">
-
-                            <label>Name</label>
-                            <input type="text" value={name}
-                                onChange={(e) => setName(e.target.value)}
-                                placeholder="Your Name"
-                            />
-
-                            <label>Email</label>
-                            <input type="email" value={email}
-                                onChange={(e) => setEmail(e.target.value)} 
-                                placeholder="Your Email"/>
-
-                            <label>Mobile</label>
-                            <input type="tel" value={number}
-                                onChange={(e) => setNumber(e.target.value)} 
-                                placeholder="Your Mobile"/>
-
-                            <label>Date</label>
-                            <input type="text" value={date} placeholder="Date/Month"
-                                onChange={(e) => setDate(e.target.value)} />
-
-                            <label>Time</label>
-                            <input type="text" value={time} placeholder="Check-In Time"
-                                onChange={(e) => setTime(e.target.value)} />
-
-
-                            <input className="booking__button" type="submit" onClick={DoneBooking}/>
-                        </form>
-                    </div>
-                </div>
+          <div className="booking__box">
+            <div className="booking__img">
+              <h2>Let us serve you better</h2>
             </div>
-    )
-}
+            <div className="booking__form">
+              <form onSubmit={handleSubmit} className="booking__table">
+                <div className="inputform">
+                  <label htmlFor="name">Name:</label>
+                  <input
+                    name="name"
+                    type="text"
+                    value={values.name}
+                    placeholder=" Enter your Name"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  {errors.name && touched.name && (
+                    <div className="input-feedback">*{errors.name}</div>
+                  )}
+                </div>
+
+                <div className="inputform">
+                  <label htmlFor="email">Email (Optional):</label>
+                  <input
+                    name="email"
+                    type="email"
+                    value={values.email}
+                    placeholder=" Enter your Email"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  {errors.email && touched.email && (
+                    <div className="input-feedback">*{errors.email}</div>
+                  )}
+                </div>
+
+                <div className="inputform">
+                  <label htmlFor="number">Contact No.:</label>
+                  <input
+                    name="number"
+                    type="tel"
+                    value={values.number}
+                    placeholder=" Enter your Contact No."
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  {errors.number && touched.number && (
+                    <div className="input-feedback">*{errors.number}</div>
+                  )}
+                </div>
+
+                <div className="inputform">
+                  <label htmlFor="date">Booking Date:</label>
+                  <input
+                    name="date"
+                    type="text"
+                    value={values.date}
+                    placeholder=" Format : Date/Month"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  {errors.date && touched.date && (
+                    <div className="input-feedback">*{errors.date}</div>
+                  )}
+                </div>
+
+                <div className="inputform">
+                  <label htmlFor="time">Arrival Time:</label>
+                  <input
+                    name="time"
+                    type="text"
+                    value={values.time}
+                    placeholder=" Format : Hour/Min AM/PM"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  {errors.time && touched.time && (
+                    <div className="input-feedback">*{errors.time}</div>
+                  )}
+                </div>
+
+                <input
+                  className="booking__button"
+                  type="submit"
+                  onClick={handleSubmit}
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      );
+    }}
+  </Formik>
+);
 
 export default Booking;
