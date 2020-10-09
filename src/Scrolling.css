@@ -11,10 +11,10 @@
   height: 850px;
   background-image: linear-gradient(
       to right,
-      rgb(255, 255, 255),
+      rgb(56, 28, 28),
       rgba(0, 0, 0, 0)
     ),
-    url("https://media.istockphoto.com/photos/butter-chicken-picture-id174967273");
+    url("Media/bg1.jpg");
   background-size: 100% 100%;
 
 }
@@ -38,10 +38,10 @@
   height: 800px;
   background-image: linear-gradient(
     to right,
-    rgb(255, 255, 255),
+    rgb(59, 37, 37),
     rgba(0, 0, 0, 0)
     ),
-    url("Media/fivePage.jpg");
+    url("Media/bg2.jpg");
   background-size: 100% 100%;
   background-attachment: fixed;
 }
@@ -65,10 +65,10 @@
   height: 800px;
   background-image: linear-gradient(
       to right,
-      rgb(255, 255, 255),
+      rgb(59, 37, 37),
       rgba(0, 0, 0, 0)
     ),
-    url("https://images.unsplash.com/photo-1595777216528-071e0127ccbf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+    url("Media/bg3.jpg");
   background-size: 100% 100%;
   background-attachment: fixed;
 }

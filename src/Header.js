@@ -4,7 +4,7 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
 import "./Header.css";
-import logo from "./Media/logo.jpg";
+import logo from './Media/footer__logo.png'
 
 function Header() {
   return (
