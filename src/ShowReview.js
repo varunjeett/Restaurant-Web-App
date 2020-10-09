@@ -10,7 +10,7 @@ function ShowReview({ rev }) {
 
       <h3>Email : {rev.data.email}</h3>
 
-      <h4>Review : {rev.data.review}</h4>
+      <h4>Review : {rev.data.fb}</h4>
 
       <h4>ID : {rev.id}</h4>
     </div>
