@@ -30,8 +30,8 @@ function Scrolling() {
 
       <div className="scrolling__fourthPage">
         <h2>
-          Authentic North Indian Cuisine. Food Innovation and Creativity. Wah Ji
-          Wah is a real delicacy for the lovers of Indian Punjabi Cuisines.
+        We are the only first pure veg specialty hub. Serving vast range of Indian Barbeque & Snacks in Veg Traditional Punjabi tasteful delights, 
+        serving royal Indian Punjabi Cuisines that has been rated as one of the finest chain across India.
         </h2>
       </div>
     </div>
