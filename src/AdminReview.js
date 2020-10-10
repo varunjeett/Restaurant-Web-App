@@ -36,7 +36,7 @@ function AdminReview() {
           />
         </Link>
 
-        <h2>Hii <span className="user__name">{user?.email}</span> , Your Bookings</h2>
+        <h2>Hii <span className="user__name">{user?.email}</span> , Your Reviews</h2>
 
         <div className="header__admin">
           <Link  className="header__admin__link" to="/admin">
