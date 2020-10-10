@@ -38,12 +38,7 @@
   border-bottom: 1px solid black;
 }
 
-.header__social {
-  margin-left: auto;
-  display: flex;
-  flex-direction: row;
-  flex: 0.2;
-}
+
 
 .icons {
   padding: 2px;
@@ -52,10 +47,6 @@
   text-decoration: none;
 }
 
-.header__social > p {
-  margin-top: 8px;
-  font-weight: 600;
-}
 
 
 .header__right {

@@ -49,11 +49,11 @@ const Booking = () => (
         <div className="booking">
           <div className="booking__box">
             <div className="booking__img">
-              <h2>Let us serve you better</h2>
+              <h1>Let us serve you better</h1>
             </div>
             <div className="booking__form">
               <form onSubmit={handleSubmit} className="booking__table">
-                <div className="inputform">
+                <div className="inputform__booking">
                   <label htmlFor="name">Name:</label>
                   <input
                     name="name"
@@ -64,11 +64,11 @@ const Booking = () => (
                     onBlur={handleBlur}
                   />
                   {errors.name && touched.name && (
-                    <div className="input-feedback">*{errors.name}</div>
+                    <div className="input-feedback-booking">*{errors.name}</div>
                   )}
                 </div>
 
-                <div className="inputform">
+                <div className="inputform__booking">
                   <label htmlFor="email">Email (Optional):</label>
                   <input
                     name="email"
@@ -79,11 +79,11 @@ const Booking = () => (
                     onBlur={handleBlur}
                   />
                   {errors.email && touched.email && (
-                    <div className="input-feedback">*{errors.email}</div>
+                    <div className="input-feedback-booking">*{errors.email}</div>
                   )}
                 </div>
 
-                <div className="inputform">
+                <div className="inputform__booking">
                   <label htmlFor="number">Contact No.:</label>
                   <input
                     name="number"
@@ -94,11 +94,11 @@ const Booking = () => (
                     onBlur={handleBlur}
                   />
                   {errors.number && touched.number && (
-                    <div className="input-feedback">*{errors.number}</div>
+                    <div className="input-feedback-booking">*{errors.number}</div>
                   )}
                 </div>
 
-                <div className="inputform">
+                <div className="inputform__booking">
                   <label htmlFor="date">Booking Date:</label>
                   <input
                     name="date"
@@ -109,11 +109,11 @@ const Booking = () => (
                     onBlur={handleBlur}
                   />
                   {errors.date && touched.date && (
-                    <div className="input-feedback">*{errors.date}</div>
+                    <div className="input-feedback-booking">*{errors.date}</div>
                   )}
                 </div>
 
-                <div className="inputform">
+                <div className="inputform__booking">
                   <label htmlFor="time">Arrival Time:</label>
                   <input
                     name="time"
@@ -124,7 +124,7 @@ const Booking = () => (
                     onBlur={handleBlur}
                   />
                   {errors.time && touched.time && (
-                    <div className="input-feedback">*{errors.time}</div>
+                    <div className="input-feedback-booking">*{errors.time}</div>
                   )}
                 </div>
 
