@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import FacebookIcon from "@material-ui/icons/Facebook";
-import InstagramIcon from "@material-ui/icons/Instagram";
 import VerifiedUserIcon from "@material-ui/icons/VerifiedUser";
 import "./Header.css";
 import logo from './Media/footer__logo.png'
@@ -33,19 +31,8 @@ function Header() {
         </Link>
       </div>
 
-      <div className="header__social">
-        <a href="https://www.instagram.com/">
-          {" "}
-          {<InstagramIcon className="icons" />}
-        </a>
-        <a href="https://www.facebook.com/">
-          {" "}
-          {<FacebookIcon className="icons" />}
-        </a>
-        <p>Follow Us!!!</p>
-      </div>
-
       <div className="header__right">
+
         <Link to="/admin" className="header__right__link">
           <div className="header__right__inside">
             <VerifiedUserIcon className="icons" />
