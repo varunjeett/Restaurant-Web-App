@@ -10,9 +10,10 @@
 }
 
 .header__logo {
-  margin-left: 20px;
+  /* margin-left: 20vh; */
   width: 100px;
   height: 100px;
+  flex: 0.1;
   cursor: pointer;
 }
 
@@ -22,8 +23,7 @@
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  flex: 0.5;
-  margin-left: auto;
+  flex: 0.8;
   text-decoration: none;
 }
 
@@ -51,7 +51,7 @@
 
 .header__right {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   flex: 0.1;
   align-items: center;
 }
@@ -75,4 +75,19 @@
 
 .header__optionLine2:hover {
   border-bottom: 1px solid black;
+}
+
+
+@media screen and (max-width:560px) {
+  .header__middle {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-around;
+      letter-spacing: 0.1em;
+  }
+  .header__social>p {
+      display: none;
+  }
+
 }

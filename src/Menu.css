@@ -1,86 +1,66 @@
-  .menu{
+.menu {
     display: flex;
+    flex-direction: row;
 }
-.menu__img{
+
+.menu__txt {
+    display: flex;
+    flex-direction: column;
     flex: 0.5;
-    margin-bottom: 20px;
     background-image: url("Media/menuPage.jpg");
- 
     background-attachment: fixed;
+    background-size: 65% 100%;
 }
 
-.menu__img > h1{
+.menu__txt h1 {
+    font-size: 9em;
+    font-family: 'Cedarville Cursive', cursive;
+    margin-left: 5%;
+}
 
-    position: relative;
-    /* left: 10px;
-    top: 20px; */
-    /* width: 700px; */
-    padding: 10px;
-    background-color: transparent;
-    color: black;
-    font-weight: bold;
-    
-    font-size: 9.3em ;
+.menu__txt h5 {
+    font-size: 1.3em;
     font-family: 'Cedarville Cursive', cursive;
-    /* border-right: 2px solid ; */
+    margin-left: 5%;
 }
-.menu__img > h5{
-    position: relative;
-    /* left: 10px;
-    top: 20px; */
-    /* width: 700px; */
-    padding: 10px;
-    background-color: transparent;
+
+.menu__tag {
     color: black;
-    font-weight: bold;
-    
-    font-size: 1.3em ;
-    font-family: 'Cedarville Cursive', cursive;
-    /* border-right: 2px solid ; */
-}
-.menu__img{
+    font-weight: 800;
     text-decoration: none;
-}
-.menu__img > h5{
-    position: relative;
-    /* left: 10px;
-    top: 10px ;
-    width: 700px; */
-    padding: 10px;
-    background-color: transparent;
-    color: black;
-    font-weight: bold;
-    
-    font-size: 1.3em ;
-    font-family: 'Cedarville Cursive', cursive;
-
-}
-.menu__card{
-    flex: 0.5;
-
+    width: 17%;
+    margin-left: 5%;
 }
 
-.menu__card > img {
-
-    width: 750px;
-    height: 700px;
-    margin-left: 20px;
-    /* border-left: 9px solid black; */
-}
-
-.menu__link:hover{
+.menu__link:hover {
     color: red;
 }
 
-@media screen and (max-width:960px){
+.menu__card {
+    flex: 0.5;
+}
 
-    .menu{
-        display: flex; 
+.menu__card img {
+    height: 100%;
+    width: 100%;
+}
+
+@media screen and (max-width:960px) {
+    .menu {
         flex-direction: column;
     }
-
-    .menu__card{
-        width: fit-content;
-        height: fit-content;
+    .menu__txt {
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+    .menu__txt h1 {
+        font-size: 5em;
+        font-family: 'Cedarville Cursive', cursive;
+        
+    }
+    .menu__txt h5 {
+        font-size: 1em;
+        font-family: 'Cedarville Cursive', cursive;
+        
     }
 }

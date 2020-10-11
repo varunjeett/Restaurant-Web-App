@@ -1,4 +1,4 @@
-.header {
+.headerAdmin {
   background-color: white;
   display: flex;
   justify-content: space-around;
@@ -8,13 +8,13 @@
   z-index: 100;
 }
 
-.header__logo {
+.headerAdmin__logo {
   margin-top: 3px;
   width: 150px;
   object-fit: contain;
 }
 
-.header__add__icon {
+.headerAdmin__add__icon {
   padding: 5px;
   height: 100px !important;
   color: black;
