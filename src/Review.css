@@ -9,11 +9,10 @@
 }
 
 .review__cantainor{
-    height: fit-content;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-
     text-align: center;
-    
 }
 
 .review__form{
@@ -22,17 +21,24 @@
     align-items: center;
     width: 100%;
 }
-.review__inner__form {
+
+.inputform  {
     display: flex;
     flex-direction: column;
     text-align: left;
-    margin: 3px;
+    width: 100%;
+    margin: 10px;
     color: white;
     font-weight: bold;
-    letter-spacing: 10px;
-    font-size: 1.7em ;
-    font-family: 'Cedarville Cursive', cursive;
+    /* letter-spacing: 0.2em; */
+    font-size: 2.0em ;
+    font-family: 'Josefin Sans', sans-serif;
 }
+
+.review__inner__form{
+    width: 100%;
+}
+
 
 .review__heading {
     
@@ -40,7 +46,7 @@
     letter-spacing: 10px;
     color: white;
     font-size: 1.7em ;
-    font-family: 'Cedarville Cursive', cursive;
+    font-family: 'Josefin Sans', sans-serif;
     border-bottom: 2px solid ;
 }
 
@@ -50,16 +56,23 @@
 
 }
 
-.review__inner__form > input{
+.inputform > input{
     background-color: rgb(255, 255, 255, 0.6);
     width: 650px;
     height: 30px;
 }
 
-.review__inner__form > textarea{
+.inputform > textarea{
     background-color: rgb(255, 255, 255, 0.6);
     width: 650px;
     height: 30px;
+}
+
+.input-feedback{
+    color: red;
+    font-size: 0.5em;
+    letter-spacing: 0px;
+
 }
 
 input[type = submit]{
@@ -84,7 +97,7 @@ input[type = submit]:hover {
 
 
     .review__cantainor{
-        height: fit-content;
+        /* height: fit-content; */
         width: 300px;
         align-items: center;
         display: flex;
@@ -102,7 +115,7 @@ input[type = submit]:hover {
         font-weight: bold;
         letter-spacing: 10px;
         font-size: 0.7em ;
-        font-family: 'Cedarville Cursive', cursive;
+        font-family: 'Josefin Sans', sans-serif;
     }
     
     .review__heading {
@@ -111,7 +124,7 @@ input[type = submit]:hover {
         letter-spacing: 10px;
         color: white;
         font-size: 1.0em ;
-        font-family: 'Cedarville Cursive', cursive;
+        font-family: 'Josefin Sans', sans-serif;
         border-bottom: 2px solid ;
     }
     
@@ -121,13 +134,13 @@ input[type = submit]:hover {
     
     }
     
-    .review__inner__form > input{
+    .inputform > input{
         background-color: rgb(255, 255, 255, 0.6);
-        width: 250px;
+        width: 100%;
         height: 30px;
     }
     
-    .review__inner__form > textarea{
+    .inputform > textarea{
         background-color: rgb(255, 255, 255, 0.6);
         width: 250px;
         height: 30px;
