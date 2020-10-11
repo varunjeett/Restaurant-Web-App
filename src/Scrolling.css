@@ -9,80 +9,88 @@
 .scrolling__secondPage {
   width: 100%;
   height: 850px;
-  background-image: linear-gradient(
-      to right,
-      rgb(56, 28, 28),
-      rgba(0, 0, 0, 0)
-    ),
-    url("Media/bg1.jpg");
+  background-image: linear-gradient( to right, rgb(56, 28, 28), rgba(0, 0, 0, 0)), url("Media/bg1.jpg");
   background-size: 100% 100%;
-
 }
 
-.scrolling__secondPage > h2 {
+.scrolling__secondPage>h2 {
   position: relative;
-  left: 20px;
-  top: 170px;
+  /* left: 20px;
+  top: 170px; */
   width: 800px;
   padding: 100px;
   background-color: transparent;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-weight: 100;
   letter-spacing: 5px;
-  font-size: 2em;
+  font-size: 2.0vw;
   font-family: "Pacifico", cursive;
 }
 
 .scrolling__thirdPage {
   width: 100%;
   height: 800px;
-  background-image: linear-gradient(
-    to right,
-    rgb(59, 37, 37),
-    rgba(0, 0, 0, 0)
-    ),
-    url("Media/bg2.jpg");
+  background-image: linear-gradient( to right, rgb(59, 37, 37), rgba(0, 0, 0, 0)), url("Media/bg2.jpg");
   background-size: 100% 100%;
   background-attachment: fixed;
 }
 
-.scrolling__thirdPage > h2 {
+.scrolling__thirdPage>h2 {
   position: relative;
   left: 20px;
   top: 170px;
   width: 800px;
   padding: 100px;
   background-color: transparent;
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   font-weight: 100;
   letter-spacing: 5px;
-  font-size: 2em;
+  font-size: 2.0vw;
   font-family: "Pacifico", cursive;
 }
 
 .scrolling__fourthPage {
   width: 100%;
   height: 800px;
-  background-image: linear-gradient(
-      to right,
-      rgb(59, 37, 37),
-      rgba(0, 0, 0, 0)
-    ),
-    url("Media/bg3.jpg");
+  background-image: linear-gradient( to right, rgb(59, 37, 37), rgba(0, 0, 0, 0)), url("Media/bg3.jpg");
   background-size: 100% 100%;
   background-attachment: fixed;
 }
 
-.scrolling__fourthPage > h2 {
-    position: relative;
-    left: 20px;
-    top: 170px;
-    width: 800px;
-    padding: 100px;
-    background-color: transparent;
-    color: rgb(0, 0, 0);
-    font-weight: 100;
-    letter-spacing: 5px;
-    font-size: 2em;
+.scrolling__fourthPage>h2 {
+  position: relative;
+  left: 20px;
+  top: 170px;
+  width: 800px;
+  padding: 100px;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  font-weight: 100;
+  letter-spacing: 5px;
+  font-size: 2.0vw;
+  font-family: "Pacifico", cursive;
+}
+
+@media screen and (max-width:786px) {
+  h2 {
+    font-size: 3.0vw;
     font-family: "Pacifico", cursive;
+    max-width: 50%;
+  }
+  .scrolling__firstPage {
+    width: 100%;
+    height: 400px;
+  }
+  .scrolling__secondPage {
+    width: 100%;
+    height: 400px;
+  }
+  .scrolling__thirdPage {
+    width: 100%;
+    height: 400px;
+  }
+  .scrolling__fourthPage {
+    width: 100%;
+    height: 400px;
+  }
 }

@@ -27,10 +27,10 @@ function AdminReview() {
 
   return (
     <div>
-      <nav className="header">
+      <nav className="headerAdmin">
       <Link to="/">
           <img
-            className="header__logo highlight"
+            className="headerAdmin__logo highlight"
             src={logo}
             alt="logo of bunchOlunch"
           />
@@ -39,7 +39,7 @@ function AdminReview() {
         <h2>Hii <span className="user__name">{user?.email}</span> , Your Reviews</h2>
 
         <div className="header__admin">
-          <Link  className="header__admin__link" to="/admin">
+          <Link className="header__admin__link" to="/adminreview">
             <div className="header__admin__box">
               <HomeIcon className="header__add__icon" fontSize="large" />
               <h5>Admin Home</h5>
