@@ -29,10 +29,10 @@ function Header() {
         <Link className="header__middle__options" to="/booking">
           <h5>Booking</h5>
         </Link>
+
       </div>
 
       <div className="header__right">
-
         <Link to="/admin" className="header__right__link">
           <div className="header__right__inside">
             <VerifiedUserIcon className="icons" />
