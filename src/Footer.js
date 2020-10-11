@@ -5,10 +5,10 @@ import footer__logo from "./Media/footer__logo.png";
 
 function Footer() {
   const e1 = "prabhjotlamba2001@gmail.com";
-  const e2 = "abhijeetvarun@gmail.com";
-  const e3 = "sumitsaurabh9868@gmail.com";
   const n1 = "8882717172";
+  const e2 = "abhijeetvarun@gmail.com";
   const n2 = "8851785099";
+  const e3 = "sumitsaurabh9868@gmail.com";
   const n3 = "9871464772";
 
   return (

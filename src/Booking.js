@@ -3,11 +3,32 @@ import { db } from "./firebase";
 import "./Booking.css";
 import * as Yup from "yup";
 import { Formik } from "formik";
+import axios from "axios";
+import { saveAs } from "file-saver";
 
 const Booking = () => (
   <Formik
-    initialValues={{ name: "", number: "", email: "", date: "", time: "" }}
+    initialValues={{
+      name: "",
+      number: "",
+      email: "",
+      date: "",
+      time: "",
+      check: "",
+    }}
     onSubmit={(values, { resetForm }) => {
+      
+      if (values.check==true) {
+        alert("Trying to print");
+        axios
+          .post("/create-pdf", values)
+          .then(() => axios.get("fetch-pdf", { responseType: "blob" }))
+          .then((res) => {
+            const pdfBlob = new Blob([res.data], { type: "application/pdf" });
+            saveAs(pdfBlob, "newPdf.pdf");
+          });
+      }
+
       db.collection("Bookings")
         .add({
           name: values.name,
@@ -17,12 +38,11 @@ const Booking = () => (
           date: values.date,
           timestamp: new Date().getTime(),
         })
-        .then(
-          alert("Booking Done, We'll Be Waiting For You !!!")
-        )
+        .then(alert("Booking Done, We'll Be Waiting For You !!!"))
         .catch((error) => {
           alert(error.message);
         });
+
       resetForm({ values: "" });
     }}
     validationSchema={Yup.object().shape({
@@ -126,6 +146,18 @@ const Booking = () => (
                   {errors.time && touched.time && (
                     <div className="input-feedback">*{errors.time}</div>
                   )}
+                </div>
+
+                <div className="input form">
+                  <input
+                    type="checkbox"
+                    value={values.check}
+                    onChange={() => {
+                      values.check = true;
+                    }}
+                    onBlur={handleBlur}
+                  />
+                  Download Booking Receipt
                 </div>
 
                 <input
