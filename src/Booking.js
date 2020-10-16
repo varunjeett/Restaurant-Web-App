@@ -3,7 +3,9 @@ import { db } from "./firebase";
 import "./Booking.css";
 import * as Yup from "yup";
 import { Formik } from "formik";
-
+import Confirmation from "./Confirmation";
+import ReactDOMServer from "react-dom/server";
+import jsPDF from "jspdf";
 
 const Booking = () => (
   <Formik
@@ -13,24 +15,38 @@ const Booking = () => (
       email: "",
       date: "",
       time: "",
+      checked:false
     }}
     onSubmit={(values, { resetForm }) => {
       
       // if  checkbox is checked, AUTO DOWNLOAD the pdf of BOOKING RECEIPT
+      
 
-      db.collection("Bookings")
-        .add({
+      let booking={
           name: values.name,
           number: values.number,
           email: values.email,
           time: values.time,
           date: values.date,
           timestamp: new Date().getTime(),
-        })
+      }
+
+      alert(booking.name);
+
+      db.collection("Bookings")
+        .add(booking)
         .then(alert("Booking Done, We'll Be Waiting For You !!!"))
         .catch((error) => {
           alert(error.message);
         });
+
+      if(values.checked===true){
+        var doc = new jsPDF();
+        alert("hello");
+        doc.fromHTML(ReactDOMServer.renderToStaticMarkup(<Confirmation booking={booking}/>));
+        alert("world");
+        doc.save("myDocument.pdf");
+      }
 
       resetForm({ values: "" });
     }}
@@ -42,6 +58,7 @@ const Booking = () => (
         .length(10, "Length should be equal to 10"),
       date: Yup.string().required("Date is required"),
       time: Yup.string().required("Arrival Time is required"),
+      checked: Yup.bool(),
     })}
   >
     {(props) => {
@@ -52,8 +69,9 @@ const Booking = () => (
         handleChange,
         handleBlur,
         handleSubmit,
+        setFieldValue
       } = props;
-
+  
       return (
         <div className="booking">
           <div className="booking__box">
@@ -135,6 +153,18 @@ const Booking = () => (
                   {errors.time && touched.time && (
                     <div className="input-feedback-booking">*{errors.time}</div>
                   )}
+                </div>
+
+
+                <div className="inputform__booking">
+                  <label htmlFor="checked">Do you want soft copy of confimaration</label>
+                  <input
+                    name="checked"
+                    type="checkbox"
+                    value={values.checked}
+                    onClick={() => setFieldValue("checked", !values.checked)}
+                    onBlur={handleBlur}
+                  />
                 </div>
 
                 <input
