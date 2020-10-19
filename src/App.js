@@ -12,9 +12,10 @@ import SignUp from "./SignUp.js";
 import AdminBooking from "./AdminBooking";
 import Footer from "./Footer";
 import AdminReview from "./AdminReview";
+import Pdfprint from "./Pdfprint";
 
 function App() {
-  const [{ user }] = useStateValue();
+  const [{ user, id }] = useStateValue();
 
   return (
     <Router>
@@ -33,9 +34,19 @@ function App() {
           </Route>
 
           <Route path="/booking">
-            <Header />
-            <Booking />
-            <Footer />
+            {id ? (
+              <>
+              <Header />
+              <Pdfprint />
+              <Footer />
+              </>
+            ) : (
+              <>
+                <Header />
+                <Booking />
+                <Footer />
+              </>
+            )}
           </Route>
 
           <Route path="/signup">
