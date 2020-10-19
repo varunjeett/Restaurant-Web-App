@@ -35,7 +35,11 @@ function App() {
 
           <Route path="/booking">
             {id ? (
+              <>
+              <Header />
               <Pdfprint />
+              <Footer />
+              </>
             ) : (
               <>
                 <Header />
