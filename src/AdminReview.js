@@ -38,19 +38,19 @@ function AdminReview() {
 
         <h2>Hii <span className="user__name">{user?.email}</span> , Your Reviews</h2>
 
-        <div className="headerAdmin__admin">
-          <Link  className="headerAdmin__admin__link" to="/admin">
-            <div className="headerAdmin__admin__box">
-              <HomeIcon className="headerAdmin__add__icon" fontSize="large" />
+        <div className="header__admin">
+          <Link className="header__admin__link" to="/adminreview">
+            <div className="header__admin__box">
+              <HomeIcon className="header__add__icon" fontSize="large" />
               <h5>Admin Home</h5>
             </div>
           </Link>
         </div>
 
-        <div className="headerAdmin__admin">
-          <Link className="headerAdmin__admin__link" to="/signup">
-            <div className="headerAdmin__admin__box">
-              <PersonAddIcon className="headerAdmin__add__icon" fontSize="large" />
+        <div className="header__admin">
+          <Link className="header__admin__link" to="/signup">
+            <div className="header__admin__box">
+              <PersonAddIcon className="header__add__icon" fontSize="large" />
               <h5>Create New Admin</h5>
             </div>
           </Link>
