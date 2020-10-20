@@ -48,8 +48,8 @@ const Review = () => {
   };
 
   return (
-    <div className="profile">
-      <div className="profile__fields">
+    <div className="review">
+      <div className="review_fields">
 
         <form onSubmit={submitForm} className="form">
           <h1>Review </h1>
