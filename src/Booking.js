@@ -63,10 +63,10 @@ function Booking() {
   };
 
   return (
-    <div className="profile">
-      <div className="profile__fields">
-        <form onSubmit={submitForm} className="form">
-          <h1>Form validation</h1>
+    <div className="booking">
+      <div className="booking__fields">
+        <form onSubmit={submitForm} className="booking__form">
+          <h1>Save a Seat</h1>
 
           <InputField
             ref={inputRefs.current[0]}
@@ -118,7 +118,8 @@ function Booking() {
             placeholder=" Format : Hour/Min AM/PM"
           />
 
-          <button type="submit">Login</button>
+          <button className="booking__button" type="submit">Confirm</button>
+          <label className="booking__caution">* mandatory fields</label>
         </form>
       </div>
     </div>
