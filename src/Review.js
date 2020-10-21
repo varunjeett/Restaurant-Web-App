@@ -2,6 +2,7 @@ import React , {useState} from "react";
 import "./Review.css";
 import InputField from "./InputField";
 import { db } from "./firebase";
+import { Label } from "@material-ui/icons";
 
 const Review = () => {
   const inputRefs = React.useRef([
@@ -48,10 +49,10 @@ const Review = () => {
   };
 
   return (
-    <div className="profile">
-      <div className="profile__fields">
+    <div className="review">
+      <div className="review_fields">
 
-        <form onSubmit={submitForm} className="form">
+        <form onSubmit={submitForm} className="review__form">
           <h1>Review </h1>
 
           <InputField
@@ -94,7 +95,8 @@ const Review = () => {
             placeholder=" Feedback"
           />
 
-          <button type="submit">Login</button>
+          <button className="review__button" type="submit">Login</button>
+        <label className="booking__caution">* mandatory fields</label>
         </form>
       </div>
     </div>
