@@ -39,7 +39,7 @@ function AdminReview() {
         <h2>Hii <span className="user__name">{user?.email}</span> , Your Reviews</h2>
 
         <div className="header__admin">
-          <Link className="header__admin__link" to="/adminreview">
+          <Link className="header__admin__link" to="/admin">
             <div className="header__admin__box">
               <HomeIcon className="header__add__icon" fontSize="large" />
               <h5>Admin Home</h5>

@@ -2,7 +2,6 @@ import React , {useState} from "react";
 import "./Review.css";
 import InputField from "./InputField";
 import { db } from "./firebase";
-import { Label } from "@material-ui/icons";
 
 const Review = () => {
   const inputRefs = React.useRef([
