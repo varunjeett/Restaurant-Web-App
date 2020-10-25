@@ -9,8 +9,8 @@
   width: 80%;
   margin-top: 10px;
   margin-bottom: 10px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .show__Booking {
@@ -37,4 +37,16 @@
 
 .delete__icon {
   color: black;
+}
+.searchBar{
+  padding-top:30px;
+  padding-bottom: 20px;
+  margin-left: 8.5%;
+  margin-right: 12.25%;
+}
+.searchBar >input{
+  height: 30px;
+  width: 100%;
+  background-color:#eff2f5;
+  padding-left: 50px;
 }
