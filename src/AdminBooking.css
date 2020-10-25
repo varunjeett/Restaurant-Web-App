@@ -44,6 +44,7 @@
   color: black;
 }
 
+
 .single__booking {
   display: flex;
   flex-direction: column;
@@ -51,6 +52,18 @@
   width: 100%;
   padding-top:20px;
   padding-bottom: 20px;
+}
+.searchBar{
+  padding-top:30px;
+  padding-bottom: 20px;
+  margin-left: 8.5%;
+  margin-right: 12.25%;
+}
+.searchBar >input{
+  height: 30px;
+  width: 100%;
+  background-color:#eff2f5;
+  padding-left: 50px;
 }
 
 .single__booking > h1 {
@@ -60,3 +73,4 @@
 .header__admin__box:hover {
   border-bottom: 1px black solid;
 }
+
