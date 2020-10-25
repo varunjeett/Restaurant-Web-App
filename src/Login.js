@@ -22,6 +22,7 @@ function Login() {
     auth
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
+      
         dispatch({
           type: actionTypes.SET_USER,
           user: result.user,
