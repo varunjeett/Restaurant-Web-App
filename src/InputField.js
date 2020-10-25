@@ -26,19 +26,19 @@ const InputField = forwardRef((props, ref) => {
           //   setError("This field is required");
           //   return false
           // }
-          if (props.name == "name") {
+          if (props.name === "name") {
             if (!value) {
               setError("Name is required");
               return false
             }
           }
-          if (props.name == "bookingDate") {
+          if (props.name === "bookingDate") {
             if (!value) {
               setError("Booking Date is required");
               return false
             }
           }
-          if (props.name == "arrivalTime") {
+          if (props.name === "arrivalTime") {
             if (!value) {
               setError("Arrival Time is required");
               return false                                  

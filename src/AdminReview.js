@@ -11,6 +11,7 @@ import HomeIcon from "@material-ui/icons/Home";
 function AdminReview() {
   const [reviews, setReviews] = useState([]);
   const [{ user }] = useStateValue();
+  const [searchItem,setSearch]=useState('');
 
   useEffect(() => {
     db.collection("Reviews")
@@ -39,7 +40,7 @@ function AdminReview() {
         <h2>Hii <span className="user__name">{user?.email}</span> , Your Reviews</h2>
 
         <div className="header__admin">
-          <Link className="header__admin__link" to="/adminreview">
+          <Link className="header__admin__link" to="/admin">
             <div className="header__admin__box">
               <HomeIcon className="header__add__icon" fontSize="large" />
               <h5>Admin Home</h5>
@@ -59,11 +60,29 @@ function AdminReview() {
 
       </nav>
 
-      <div className="single__review">
-        {reviews?.map((rev) => (
-          <ShowReview rev={rev} />
-        ))}
-      </div>
+      <div className="content">
+        <div className="searchBar">
+                <input
+                      type="text"
+                      name="searchBar"
+                      id="searchBar"
+                      placeholder="Search for Review"
+                      value={searchItem}
+                      onChange={(e)=> setSearch(e.target.value.toLocaleLowerCase())}
+                  />
+        </div>
+
+        <div className="single__review">
+          {
+            reviews.filter((review)=>{
+                return(review.data.name.toLowerCase().includes(searchItem)||
+                String(review.data.number).includes(searchItem)||
+                      (review.data.email&&review.data.email.includes(searchItem)))
+            })?.map((review) => (
+              <ShowReview rev={review} />
+          ))}
+        </div>
+        </div>
     </div>
   );
 }

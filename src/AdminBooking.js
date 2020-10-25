@@ -8,9 +8,11 @@ import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import { Link } from "react-router-dom";
 import HomeIcon from "@material-ui/icons/Home";
 import FeedbackIcon from "@material-ui/icons/Feedback";
+import { TrendingUpOutlined } from "@material-ui/icons";
 
 function AdminBooking() {
   const [bookings, setBooking] = useState([]);
+  const [searchItem,setSearch]=useState('');
   const [{ user }] = useStateValue();
 
   useEffect(() => {
@@ -28,6 +30,7 @@ function AdminBooking() {
 
   return (
     <>
+
       <nav className="admin__header">
         
         <Link to="/">
@@ -69,10 +72,30 @@ function AdminBooking() {
 
       </nav>
 
+
+    <div className="content">
+      <div className="searchBar">
+              <input
+                    type="text"
+                    name="searchBar"
+                    id="searchBar"
+                    placeholder="search for booking"
+                    value={searchItem}
+                    onChange={(e)=> setSearch(e.target.value.toLocaleLowerCase())}
+                />
+      </div>
+
       <div className="single__booking">
-        {bookings?.map((book) => (
+        {
+          bookings.filter((booking)=>{
+               return(booking.data.name.toLowerCase().includes(searchItem)||
+                      String(booking.data.number).includes(searchItem)||
+                      (booking.data.email&&booking.data.email.includes(searchItem))
+               )
+          })?.map((book) => (
           <ShowBooking book={book} />
         ))}
+      </div>
       </div>
     </>
   );
