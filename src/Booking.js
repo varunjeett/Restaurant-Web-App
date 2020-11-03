@@ -6,6 +6,7 @@ import { actionTypes } from "./reducer";
 import InputField from "./InputField";
 
 function Booking() {
+  // eslint-disable-next-line
   const [state, dispatch] = useStateValue();
   const inputRefs = React.useRef([
     React.createRef(),
