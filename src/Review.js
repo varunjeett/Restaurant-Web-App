@@ -1,28 +1,29 @@
-import React , {useState} from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import "./Review.css";
 import InputField from "./InputField";
-import { db } from "./firebase";
+import { db } from "./firebase.js";
 
 const Review = () => {
-  const inputRefs = React.useRef([
+  const history = useHistory(); 
+  const inputRefs1 = React.useRef([
     React.createRef(),
     React.createRef(),
     React.createRef(),
     React.createRef(),
   ]);
 
-  const [data, setData] = useState({});
-
+  const [data1, setData1] = useState({});
   const handleChange = (name, value) => {
-    setData((prev) => ({ ...prev, [name]: value }));
+    setData1((prev) => ({ ...prev, [name]: value }));
   };
 
-  const submitForm = (e) => {
+  const submitForm2 = (e) => {
     e.preventDefault();
 
     let isValid = true;
-    for (let i = 0; i < inputRefs.current.length; i++) {
-      const valid = inputRefs.current[i].current.validate();
+    for (let i = 0; i < inputRefs1.current.length; i++) {
+      const valid = inputRefs1.current[i].current.validate();
       console.log(valid);
       if (!valid) {
         isValid = false;
@@ -33,29 +34,36 @@ const Review = () => {
       return;
     }
 
+
+    console.log(data1.name);
+    console.log(data1.contact1);
+    console.log(data1.email1);
+    console.log(data1.feedback);
+
     db.collection("Reviews")
       .add({
-        name: data.name,
-        contact:data.contact,
-        email:data.email,
-        feedback:data.feedback,
+        name: data1.name,
+        // contact: data1.contact,
+        // email:data1.email,
+        feedback: data1.feedback,
         timestamp: new Date().getTime(),
       })
-      .then(alert("Your Feedback is Valuable For Us !!!"))
+      .then(history.replace("/"))
       .catch((error) => {
         alert(error.message);
       });
+
+      
   };
 
   return (
     <div className="review">
       <div className="review_fields">
-
-        <form onSubmit={submitForm} className="review__form">
+        <form onSubmit={submitForm2} className="review__form">
           <h1>Review </h1>
 
           <InputField
-            ref={inputRefs.current[0]}
+            ref={inputRefs1.current[0]}
             name="name"
             type="text"
             label="Name*:"
@@ -65,27 +73,27 @@ const Review = () => {
           />
 
           <InputField
-            ref={inputRefs.current[1]}
-            name="email"
+            ref={inputRefs1.current[1]}
+            name="email1"
             type="email"
             label="Email:"
             onChange={handleChange}
-            validation={""}
+            validation={"invalid"}
             placeholder=" Enter your Email"
           />
 
           <InputField
-            ref={inputRefs.current[2]}
-            name="contact"
+            ref={inputRefs1.current[2]}
+            name="contact1"
             type="text"
             label="Contact:"
-            validation={"max:10"}
+            validation={"invalid"}
             onChange={handleChange}
             placeholder=" Enter your Contact No."
           />
 
           <InputField
-            ref={inputRefs.current[3]}
+            ref={inputRefs1.current[3]}
             name="feedback"
             type="text"
             label="Feedback*:"
@@ -94,15 +102,17 @@ const Review = () => {
             placeholder=" Feedback"
           />
 
-          <button className="review__button" type="submit">Login</button>
-        <label className="booking__caution">* mandatory fields</label>
+          <label className="booking__caution">* mandatory fields</label>
+          <button className="review__button" type="submit">
+            Submit
+          </button>
+
         </form>
       </div>
     </div>
   );
 };
 export default Review;
-
 
 
 //   <Formik
@@ -145,13 +155,6 @@ export default Review;
 //           <div className="review__cantainor">
 
 //             <div className="review__heading">
-
-
-
-
-
-
-
 
 //               <h1> Your Experience </h1>
 //             </div>

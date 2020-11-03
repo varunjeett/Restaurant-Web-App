@@ -1,5 +1,5 @@
 // import React from "react";
-// import "./confirmation.css";
+// import "./Confirmation.css";
 // import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
 // import logo from "./Media/logo.jpg";
 
