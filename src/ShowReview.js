@@ -3,7 +3,6 @@ import "./ShowReview.css";
 import { db } from "./firebase.js";
 import DeleteIcon from "@material-ui/icons/Delete";
 
-
 function ShowReview({ rev }) {
   const deleteDoc = (e) => {
     e.stopPropagation();
@@ -16,13 +15,12 @@ function ShowReview({ rev }) {
         <h1>Name : {rev.data.name}</h1>
 
         <h3>
-          Phone Number :
-          <a className={"contact__link"} href={`tel: ${rev.data.number}`}>
-            {rev.data.number}
+          Contact Number :
+          <a className={"contact__link"} href={`tel: ${rev.data.contact}`}>
+            {rev.data.contact}
           </a>
         </h3>
 
-       
         <h3>
           Email :
           <a
@@ -35,9 +33,9 @@ function ShowReview({ rev }) {
           </a>
         </h3>
 
-        <h3>Review : {rev.data.fb}</h3>
+        <h3>Feedback : {rev.data.feedback}</h3>
 
-        <h5>ID : {rev.id}</h5>
+        <h3>Review ID : {rev.id}</h3>
       </div>
 
       <div onClick={deleteDoc} className="delete__iconbox">
