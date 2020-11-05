@@ -7,11 +7,16 @@ import { Link } from "react-router-dom";
 import PersonAddIcon from "@material-ui/icons/PersonAdd";
 import "./AdminReview.css";
 import HomeIcon from "@material-ui/icons/Home";
+import SearchIcon from '@material-ui/icons/Search';
 
 function AdminReview() {
   const [reviews, setReviews] = useState([]);
   const [{ user }] = useStateValue();
   const [searchItem,setSearch]=useState('');
+  const [clicked,setClick]=useState(false);
+  const [results,setResults]=useState([]);
+  const [searchEmpty,setEmpty]=useState(true);
+  
 
   useEffect(() => {
     db.collection("Reviews")
@@ -25,6 +30,44 @@ function AdminReview() {
         )
       );
   }, []);
+
+  const checkSubstr=(a,b)=>{
+    
+    let substrs=[a[0]];
+  
+    for(let i=1;i<a.length;i++){
+
+      let tobeAdded=[];
+
+      for(let j=0;j<substrs.length;j++){
+        tobeAdded.push(substrs[j]+a[i]);
+      }
+      substrs=[...substrs,...tobeAdded];
+    }
+
+    for(let j=0;j<substrs.length;j++){
+      if (substrs[j]===b){
+        return true;
+      }
+    }
+    
+    return false;
+  }
+
+  const handleSearch=(e)=>{
+    e.preventDefault(); 
+    setClick(true);
+    setEmpty(true);
+
+    setResults(reviews.filter((review)=>{
+      const flag=(checkSubstr(review.data.name.toLowerCase(),searchItem)||
+             String(review?.data.contact)?.includes(searchItem)||
+             review?.data.email?.includes(searchItem));
+      if(flag) setEmpty(false);
+      return flag;
+    }));
+  }
+
 
   return (
     <div>
@@ -68,19 +111,22 @@ function AdminReview() {
                       id="searchBar"
                       placeholder="Search for Review"
                       value={searchItem}
-                      onChange={(e)=> setSearch(e.target.value.toLocaleLowerCase())}
+                      onChange={(e)=> {setSearch(e.target.value.toLocaleLowerCase());setClick(false);}}
                   />
+                  <button type="submit" onClick={handleSearch}><SearchIcon/></button>
         </div>
 
         <div className="single__review">
           {
-            reviews.filter((review)=>{
+            !clicked&&reviews.filter((review)=>{
                 return(review.data.name.toLowerCase().includes(searchItem)||
-                String(review.data.number).includes(searchItem)||
-                      (review.data.email&&review.data.email.includes(searchItem)))
+                      String(review?.data.contact)?.includes(searchItem)||
+                      (review?.data.email?.includes(searchItem)))
             })?.map((review) => (
               <ShowReview rev={review} />
           ))}
+          {clicked&&results?.map(result=>(<ShowReview rev={result}/>))}
+          {clicked&&searchEmpty&&<h1>No Result Found</h1>}
         </div>
         </div>
     </div>

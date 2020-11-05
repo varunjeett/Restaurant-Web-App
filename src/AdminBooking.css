@@ -23,7 +23,6 @@
   margin-top: 15px;
 }
 
-
 .header__add__icon {
   height: 100px !important;
   color: black;
@@ -58,6 +57,7 @@
   padding-bottom: 20px;
   margin-left: 8.5%;
   margin-right: 12.25%;
+  display: flex;
 }
 .searchBar >input{
   height: 30px;
