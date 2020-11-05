@@ -37,3 +37,20 @@
   border-radius: 5px 5px 5px 5px;
   border: 1px black solid;
 }
+
+.searchBar{
+  display: flex;
+}
+
+.searchBar{
+  padding-top:30px;
+  padding-bottom: 20px;
+  margin-left: 8.5%;
+  margin-right: 12.25%;
+}
+.searchBar >input{
+  height: 30px;
+  width: 100%;
+  background-color:#eff2f5;
+  padding-left: 50px;
+}
