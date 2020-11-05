@@ -3,6 +3,7 @@ import "./ShowBooking.css";
 import { db } from "./firebase.js";
 import DeleteIcon from "@material-ui/icons/Delete";
 
+
 function ShowBooking({ book }) {
   const deleteDoc = (e) => {
     e.stopPropagation();
@@ -15,9 +16,9 @@ function ShowBooking({ book }) {
         <h1>Name : {book.data.name}</h1>
 
         <h3>
-          Phone Number :
+          Contact Number :
           <a className={"contact__link"} href={`tel: ${book.data.number}`}>
-            {book.data.number}
+            {book.data.contact}
           </a>
         </h3>
 
@@ -33,11 +34,11 @@ function ShowBooking({ book }) {
           </a>
         </h3>
 
-        <h3>Date : {book.data.date}</h3>
+        <h3>Booking Date : {book.data.bookingDate}</h3>
 
-        <h3>Time : {book.data.time}</h3>
+        <h3>Arrival Time : {book.data.arrivalTime}</h3>
 
-        <h5>ID : {book.id}</h5>
+        <h3>Booking ID : {book.id}</h3>
       </div>
 
       <div onClick={deleteDoc} className="delete__iconbox">

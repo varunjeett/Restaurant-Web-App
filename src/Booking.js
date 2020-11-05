@@ -6,6 +6,8 @@ import { actionTypes } from "./reducer";
 import InputField from "./InputField";
 
 function Booking() {
+  // eslint-disable-next-line
+
   const [state, dispatch] = useStateValue();
   const inputRefs = React.useRef([
     React.createRef(),
@@ -35,6 +37,11 @@ function Booking() {
     if (!isValid) {
       return;
     }
+
+    // console.log(data.name);
+    // console.log(data.contact);
+    // console.log(data.email);
+    // console.log(data.arrivalTime);
 
     db.collection("Bookings")
       .add({
