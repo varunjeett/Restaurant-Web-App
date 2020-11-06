@@ -9,10 +9,15 @@ import { Link } from "react-router-dom";
 import HomeIcon from "@material-ui/icons/Home";
 import FeedbackIcon from "@material-ui/icons/Feedback";
 import { TrendingUpOutlined } from "@material-ui/icons";
+import SearchIcon from '@material-ui/icons/Search';
 
 function AdminBooking() {
   const [bookings, setBooking] = useState([]);
   const [searchItem,setSearch]=useState('');
+  const [clicked,setClick]=useState(false);
+  const [results,setResults]=useState([]);
+  const [searchEmpty,setEmpty]=useState(true);
+
   const [{ user }] = useStateValue();
 
   useEffect(() => {
@@ -27,6 +32,48 @@ function AdminBooking() {
         )
       );
   }, []);
+  
+  const checkSubstr=(a,b)=>{
+    
+    let substrs=[a[0]];
+  
+    for(let i=1;i<a.length;i++){
+
+      let tobeAdded=[];
+
+      for(let j=0;j<substrs.length;j++){
+        tobeAdded.push(substrs[j]+a[i]);
+      }
+      substrs=[...substrs,...tobeAdded];
+    }
+
+    for(let j=0;j<substrs.length;j++){
+      if (substrs[j]===b){
+        return true;
+      }
+    }
+    
+    return false;
+  }
+
+    
+  const handleSearch=(e)=>{
+    e.preventDefault(); 
+    setClick(true);
+    
+    setEmpty(true);
+
+    setResults(bookings.filter((booking)=>{
+      const flag=(checkSubstr(booking.data.name.toLowerCase(),searchItem)||
+             String(booking.data.number).includes(searchItem)||
+             booking?.data.email.includes(searchItem));
+      if(flag) setEmpty(false);
+      return flag;
+    }));
+
+    
+
+  }
 
   return (
     <>
@@ -81,20 +128,24 @@ function AdminBooking() {
                     id="searchBar"
                     placeholder="search for booking"
                     value={searchItem}
-                    onChange={(e)=> setSearch(e.target.value.toLocaleLowerCase())}
+                    onChange={(e)=> {setSearch(e.target.value.toLocaleLowerCase());setClick(false);}}
                 />
+                <button type="submit" onClick={handleSearch}><SearchIcon/></button>
       </div>
 
       <div className="single__booking">
         {
-          bookings.filter((booking)=>{
+          !clicked&&bookings.filter((booking)=>{
                return(booking.data.name.toLowerCase().includes(searchItem)||
                       String(booking.data.number).includes(searchItem)||
                       (booking.data.email&&booking.data.email.includes(searchItem))
                )
           })?.map((book) => (
           <ShowBooking book={book} />
-        ))}
+        ))
+        }
+        {clicked&&results?.map(result=>(<ShowBooking book={result}/>))}
+        {clicked&&searchEmpty&&<h1>No Result Found</h1>}
       </div>
       </div>
     </>
