@@ -7,6 +7,10 @@
     justify-content: center;
     padding-top: 2%;
     padding-bottom: 2%;
+    background-image: url(https://cdnimg.webstaurantstore.com/images/articles/149/concept_header_lrg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    font-family: 'Roboto', sans-serif;
 }
 
 .booking__form {
@@ -14,9 +18,9 @@
     width: 50vw;
     display: flex;
     flex-direction: column;
-    box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.1), -7px -7px 20px rgba(241, 255, 255, 1);
+    /* box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.1), -7px -7px 20px rgba(241, 255, 255, 1); */
     align-items: center;
-    background: #eef9fc;
+    background: rgba(0, 0, 0, 0.6); 
 }
 .booking__button{
     margin-top: 2%;
@@ -44,4 +48,19 @@
 .booking__caution{
     display: flex;
     width: 60%;
+}
+h1{
+    background-color: aqua;
+    width: 95%;
+    text-align: center;
+    height: 4%;
+    font-family: 'Roboto', sans-serif;
+}
+.input__wrapper label {
+    display: flex;
+    width: 80%;
+    font-size: 1.3rem;
+    text-align: left;
+    font-weight: 600;
+    color: rgb(122, 228, 228);
 }
