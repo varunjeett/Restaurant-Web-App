@@ -38,35 +38,35 @@ function Booking() {
       return;
     }
 
-    console.log(data.name);
-    console.log(data.contact);
-    console.log(data.email);
-    console.log(data.arrivalTime);
+    // console.log(data.name);
+    // console.log(data.contact);
+    // console.log(data.email);
+    // console.log(data.arrivalTime);
 
-  //   db.collection("Bookings")
-  //     .add({
-  //       name: data.name,
-  //       contact: data.contact,
-  //       email: data.email,
-  //       arrivalTime: data.arrivalTime,
-  //       bookingDate: data.bookingDate,
-  //       timestamp: new Date().getTime(),
-  //     })
-  //     .then((docRef) => {
-  //       console.log(docRef.id);
-  //       dispatch({
-  //         type: actionTypes.SET_BOOKING,
-  //         id: docRef.id,
-  //         name: data.name,
-  //         email: data.email,
-  //         contact: data.contact,
-  //         arrivalTime: data.arrivalTime,
-  //         bookingDate: data.bookingDate,
-  //       });
-  //     })
-  //     .catch((error) => {
-  //       alert(error.message);
-  //     });
+    db.collection("Bookings")
+      .add({
+        name: data.name,
+        contact: data.contact,
+        email: data.email,
+        arrivalTime: data.arrivalTime,
+        bookingDate: data.bookingDate,
+        timestamp: new Date().getTime(),
+      })
+      .then((docRef) => {
+        console.log(docRef.id);
+        dispatch({
+          type: actionTypes.SET_BOOKING,
+          id: docRef.id,
+          name: data.name,
+          email: data.email,
+          contact: data.contact,
+          arrivalTime: data.arrivalTime,
+          bookingDate: data.bookingDate,
+        });
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
   };
 
   return (
