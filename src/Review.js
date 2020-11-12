@@ -35,16 +35,16 @@ const Review = () => {
     }
 
 
-    console.log(data1.name);
-    console.log(data1.contact1);
-    console.log(data1.email1);
-    console.log(data1.feedback);
+    // console.log(data1.name);
+    // console.log(data1.contact);
+    // console.log(data1.email);
+    // console.log(data1.feedback);
 
     db.collection("Reviews")
       .add({
         name: data1.name,
-        // contact: data1.contact,
-        // email:data1.email,
+        contact: data1.contact,
+        email:data1.email,
         feedback: data1.feedback,
         timestamp: new Date().getTime(),
       })
@@ -74,7 +74,7 @@ const Review = () => {
 
           <InputField
             ref={inputRefs1.current[1]}
-            name="email1"
+            name="email"
             type="email"
             label="Email:"
             onChange={handleChange}
@@ -84,7 +84,7 @@ const Review = () => {
 
           <InputField
             ref={inputRefs1.current[2]}
-            name="contact1"
+            name="contact"
             type="text"
             label="Contact:"
             validation={"invalid"}

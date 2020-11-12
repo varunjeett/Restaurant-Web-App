@@ -38,43 +38,46 @@ function Booking() {
       return;
     }
 
-    console.log(data.name);
-    console.log(data.contact);
-    console.log(data.email);
-    console.log(data.arrivalTime);
+    // console.log(data.name);
+    // console.log(data.contact);
+    // console.log(data.email);
+    // console.log(data.arrivalTime);
 
-  //   db.collection("Bookings")
-  //     .add({
-  //       name: data.name,
-  //       contact: data.contact,
-  //       email: data.email,
-  //       arrivalTime: data.arrivalTime,
-  //       bookingDate: data.bookingDate,
-  //       timestamp: new Date().getTime(),
-  //     })
-  //     .then((docRef) => {
-  //       console.log(docRef.id);
-  //       dispatch({
-  //         type: actionTypes.SET_BOOKING,
-  //         id: docRef.id,
-  //         name: data.name,
-  //         email: data.email,
-  //         contact: data.contact,
-  //         arrivalTime: data.arrivalTime,
-  //         bookingDate: data.bookingDate,
-  //       });
-  //     })
-  //     .catch((error) => {
-  //       alert(error.message);
-  //     });
+    db.collection("Bookings")
+      .add({
+        name: data.name,
+        contact: data.contact,
+        email: data.email,
+        arrivalTime: data.arrivalTime,
+        bookingDate: data.bookingDate,
+        timestamp: new Date().getTime(),
+      })
+      .then((docRef) => {
+        console.log(docRef.id);
+        dispatch({
+          type: actionTypes.SET_BOOKING,
+          id: docRef.id,
+          name: data.name,
+          email: data.email,
+          contact: data.contact,
+          arrivalTime: data.arrivalTime,
+          bookingDate: data.bookingDate,
+        });
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
   };
 
   return (
+    
     <div className="booking">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap" rel="stylesheet"/>
+      <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"></link>
       <div className="booking__fields">
         <form onSubmit={submitForm} className="booking__form">
-          <h1>Save a Seat</h1>
-
+          <h1 className="booking-head">SAVE A SEAT</h1>
+          <br/>
           <InputField
             ref={inputRefs.current[0]}
             name="name"
