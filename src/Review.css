@@ -7,6 +7,11 @@
     justify-content: center;
     padding-top: 2%;
     padding-bottom: 2%;
+    background-image: url(https://i.pinimg.com/736x/fc/ad/c7/fcadc7d60ac774820fe31bf25b9c0d5c.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .review__form{
@@ -14,9 +19,9 @@
     width: 50vw;
     display: flex;
     flex-direction: column;
-    box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.1), -7px -7px 20px rgba(241, 255, 255, 1);
+    color: #bbf1fa;
     align-items: center;
-    background: #eef9fc;
+    background-color: rgb(4 11 31 / 57%);
 }
 
 
@@ -30,8 +35,6 @@
     border-radius: 0.7rem;
     padding: 2%;
     transition: ease all 250ms;
-    box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.1),
-    -7px -7px 20px rgb(241, 255, 255);
     border: unset;
     font-size: large;
 }
@@ -47,3 +50,4 @@
     display: flex;
     width: 60%;
 }
+
