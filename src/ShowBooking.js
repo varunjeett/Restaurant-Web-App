@@ -10,28 +10,18 @@ function ShowBooking({ book }) {
     db.collection("Bookings").doc(book.id).delete();
   };
 
-  return (                    
-    <div className="ShowBooking">
-      <div className="show__Booking">
-        <table style={{width:'100%' , border:' 1px solid black'}}>
-        <col width="150"/> 
-            <col width="100"/> 
-                <col width="250"/> 
-                <col width="130"/> 
-                <col width="200"/> 
-                <col width="200"/> 
-                <col width="200"/> 
-          <tr>
-            <th>
-              {book.data.name}     
-              </th>
-            <th>
-              <a className={"contact__link"} href={`tel: ${book.data.number}`}>
+  return (
+    <div className="show_booking">
+        <div class="name">
+          {book.data.name}
+        </div>
+        <div class="contact_num">
+          <a className={"contact__link"} href={`tel: ${book.data.number}`}>
             {book.data.contact}
           </a>
-          </th>
-            <th>
-            <a
+        </div>
+        <div class="email">
+          <a
             className={"contact__link"}
             href={`mailto: ${book.data.email}`}
             target={"_blank"}
@@ -39,25 +29,25 @@ function ShowBooking({ book }) {
           >
             {book.data.email}
           </a>
-            </th>
-            <th>
-              {book.data.bookingDate}
-            </th>
-            <th>
-            {book.data.arrivalTime}
-            </th>
-            <th>
-            {book.id}
-            </th>
-            <th onClick={deleteDoc} className="delete__iconbox">
-        <DeleteIcon className="delete__icon" fontSize="large" />
-      
-      </th>
-          </tr>
-          
-        </table>
+        </div>
+        <div class="booking_date">
+          {book.data.bookingDate}
+        </div>
+        <div class="arrival_time">
+          {book.data.arrivalTime}
+        </div>
+        <div class="booking_id">
+          {book.id}
+        </div>
+        <div onClick={deleteDoc} className="delete__iconbox">
+          {/* <DeleteIcon className="delete__icon" fontSize="large" /> */}
+          {/* <Button>  */}
+                   Delete
+                   {/* </Button> */}
+        </div>
+
+
       </div>
-    </div>
   );
 }
 

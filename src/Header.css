@@ -26,12 +26,12 @@
   text-decoration: none;
 }
 
-.dropdown{
+.dropdown {
   font-size: 1.1em;
   color: black;
   text-decoration: none;
   border-bottom: 1px solid transparent;
-  background-color:#80808054;
+  background-color: #80808054;
   padding: .3rem .7rem;
   display: none;
 }
@@ -41,7 +41,7 @@
   color: black;
   text-decoration: none;
   border-bottom: 1px solid transparent;
-  background-color:#80808054;
+  background-color: #80808054;
   padding: .3rem .7rem;
   border-radius: 1rem;
   margin: 0 .2rem;
@@ -51,11 +51,30 @@
   border-bottom: 1px solid black;
 }
 
-.header__middle__options:active{
+.header__middle__options:active {
   background-color: gray;
   color: white;
 }
 
+.drop__menu__options {
+  font-size: 1.1em;
+  color: black;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  background-color: #80808054;
+  padding: .3rem .7rem;
+  border-radius: 1rem;
+  margin: 0 .2rem;
+}
+
+.drop__menu__options:hover {
+  border-bottom: 1px solid black;
+}
+
+.drop__menu__options:active {
+  background-color: gray;
+  color: white;
+}
 
 .icons {
   padding: 2px;
@@ -63,8 +82,6 @@
   color: black;
   text-decoration: none;
 }
-
-
 
 .header__right {
   display: flex;
@@ -94,32 +111,48 @@
   border-bottom: 1px solid black;
 }
 
+.header__middle__right {
+  display: none;
+}
+
+.drop__menu {
+  display: none;
+}
 
 @media screen and (max-width:560px) {
   .header__social>p {
-      display: none;
+    display: none;
   }
-
-  .header__middle{
-    justify-content: center;
+  .header__middle {
+    display: none;
+  }
+  .drop__menu {
+    display: flex;
     flex-direction: column;
   }
-
-  .header__middle__options{display: none;}
-
-  .dropdown{
+  .header__middle__right {
+    display: none;
+  }
+  .drop__menu__options {
+    display: none;
+  }
+  .dropdown {
+    display: block;
+  }
+  .drop__menu:hover .header__middle__right {
     display: block;
   }
 
-  .header__middle:hover .header__middle__options
-  {
+  .drop__menu:hover .drop__menu__options {
     display: block;
     border-radius: 0rem;
     color: black;
     background-color: white;
-
   }
 
-
-
+  .header__right {
+    display: none;
+    color: black;
+    background-color: white;
+  }
 }
