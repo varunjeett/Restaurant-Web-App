@@ -73,4 +73,9 @@
 .header__admin__box:hover {
   border-bottom: 1px black solid;
 }
-
+.content{
+  background-color:rgb(68 64 64 / 17%);
+}
+#main{
+  background-color: whitesmoke;
+}

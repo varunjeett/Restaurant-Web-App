@@ -134,7 +134,26 @@ function AdminBooking() {
       </div>
 
       <div className="single__booking">
+      <table id="main" border="1px solid black" >
+      <col width="150"/> 
+            <col width="100"/> 
+                <col width="250"/> 
+                <col width="130"/> 
+                <col width="200"/> 
+                <col width="200"/> 
+                <col width="200"/> 
+           <tr>
+           <th>Name</th>
+           <th>Contact Number</th>
+           <th>Email </th>
+           <th>Booking Date </th>
+           <th>Arrival Time </th>
+           <th>Booking ID</th>
+           <th>Delete Permanently</th>
+           </tr>
+           </table>
         {
+          
           !clicked&&bookings.filter((booking)=>{
                return(booking.data.name.toLowerCase().includes(searchItem)||
                       String(booking.data.number).includes(searchItem)||

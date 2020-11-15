@@ -33,8 +33,8 @@
     border-radius: 0.7rem;
     padding: 2%;
     transition: ease all 250ms;
-    box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.1),
-    -7px -7px 20px rgb(241, 255, 255);
+    /* box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.1),
+    -7px -7px 20px rgb(241, 255, 255); */
     border: unset;
     font-size: large;
 }
@@ -51,10 +51,20 @@
     width: 60%;
 }
 .booking-head{
-    background-color: aqua;
+    /* background-color: aqua; */
     width: 95%;
     text-align: center;
     height: 4%;
     font-family: 'Roboto', sans-serif;
-    color: black;
+    /* color: black; */
 }
+@media only screen and (max-width: 530px) {
+    .booking{
+        background-image: none;
+        background:rgba(0, 0, 0, 0.1); 
+        display: block;
+    }
+    .booking__form{
+        width: 100%;
+    }
+  }
