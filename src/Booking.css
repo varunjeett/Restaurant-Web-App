@@ -33,8 +33,6 @@
     border-radius: 0.7rem;
     padding: 2%;
     transition: ease all 250ms;
-    box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.1),
-    -7px -7px 20px rgb(241, 255, 255);
     border: unset;
     font-size: large;
 }
@@ -51,10 +49,22 @@
     width: 60%;
 }
 .booking-head{
-    background-color: aqua;
+    color: aqua;
     width: 95%;
     text-align: center;
     height: 4%;
-    font-family: 'Roboto', sans-serif;
-    color: black;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 3.5rem;
 }
+
+@media screen and (max-width:600px)
+{
+    .booking__form{
+        width: 70vw;
+        margin-right: 1.2rem;
+    }
+    .booking-head{
+        font-size: 3rem;
+    }
+}
+

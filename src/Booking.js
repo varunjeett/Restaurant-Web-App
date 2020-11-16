@@ -76,7 +76,7 @@ function Booking() {
       <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"></link>
       <div className="booking__fields">
         <form onSubmit={submitForm} className="booking__form">
-          <h1 className="booking-head">SAVE A SEAT</h1>
+          <h1 className="booking-head">Booking</h1>
           <br/>
           <InputField
             ref={inputRefs.current[0]}

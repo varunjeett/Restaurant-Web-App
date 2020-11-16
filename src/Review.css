@@ -36,7 +36,7 @@
     padding: 2%;
     transition: ease all 250ms;
     border: unset;
-    font-size: large;
+    font-size: 1.1rem;
 }
 
 .review__button:hover {
@@ -49,5 +49,13 @@
 .review__form label{
     display: flex;
     width: 60%;
+}
+
+@media screen and (max-width:600px)
+{
+    .review__form{
+        width: 70vw;
+        margin-right: 1.2rem;
+    }
 }
 
