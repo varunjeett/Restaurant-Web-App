@@ -8,6 +8,11 @@
   z-index: 100;
 }
 
+.headerAdmin>h2{
+  margin-top: 15px;
+  text-align: center;
+}
+
 .headerAdmin__logo {
   margin-top: 3px;
   width: 150px;
@@ -18,6 +23,10 @@
   padding: 5px;
   height: 100px !important;
   color: black;
+}
+
+.header__admin__box>h5{
+  text-align: center;
 }
 
 .single__review {
@@ -53,4 +62,36 @@
   width: 100%;
   background-color:#eff2f5;
   padding-left: 50px;
+}
+
+@media screen and (max-width:600px){
+  .headerAdmin>h2{
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .headerAdmin__logo{
+    width: 6rem;
+    margin-top: 2px;
+  }
+
+  .header__admin__box>h5{
+    font-size: .8rem;
+  }
+}
+
+@media screen and (max-width:400px){
+  .headerAdmin>h2{
+    text-align: center;
+    font-size: .8rem;
+  }
+
+  .headerAdmin__logo{
+    width: 4rem;
+    margin-top: 2px;
+  }
+
+  .header__admin__box>h5{
+    font-size: .6rem;
+  }
 }

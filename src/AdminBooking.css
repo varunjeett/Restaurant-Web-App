@@ -11,7 +11,7 @@
 
 .header__logo {
   margin-top: 3px;
-  width: 150px;
+  width: 12rem;
   object-fit: contain;
 }
 
@@ -21,6 +21,7 @@
 
 .admin__header>h2 {
   margin-top: 15px;
+  text-align: center;
 }
 
 .header__add__icon {
@@ -36,6 +37,7 @@
 
 .header__admin__box>h5 {
   margin-top: -25px;
+  text-align: center;
 }
 
 .header__admin__link {
@@ -126,4 +128,24 @@
   width: 12.5%; 
   text-align: left; 
   background-color: whitesmoke;
+}
+
+@media screen and (max-width:600px)
+{
+  .admin__header>h2{
+    font-size: 1rem;
+  }
+  
+
+  .header__logo{
+    width: 6rem;
+  }
+}
+
+@media screen and (max-width:460px){
+  .header__logo{
+    margin-top: 2px;
+  }
+
+
 }
