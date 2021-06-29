@@ -1,13 +1,58 @@
 .Pdfprint {
     display: flex;
+    width: 100%;
+    height: 100%;
+    background-image: url("Media/bg7.jpg");
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    height: 100%;
     flex-direction: column;
     align-items: center;
-    background-color: red;
+    /* background-color: red; */
+}
+.printMessage{
+    color: #ffffff;
+    text-align: center;
+    background: rgba(5, 5, 5, 0.6);
+}
+.pdftext > p{
+    font-size: 1.5rem;
+    font-family: 'Architects Daughter', cursive;
+    font-weight: 400;
+}
+
+.receipt{
+    width: 100px;
+    height: 100px;
 }
 
 .receipt {
     display: flex;
+    background-image: url("Media/bg6.jpg");
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    height: 100%;
+    width: 30%;
     flex-direction: column;
     align-items: center;
     background-color: aqua;
+}
+
+.pdf__button{
+    margin-top: 2%;
+    outline: none;
+    color: rgb(4, 11, 31);
+    font-weight: bold;
+    border-radius: 0.7rem;
+    padding: 2%;
+    transition: ease all 250ms;
+    border: unset;
+    font-size: large;
+}
+
+.pdf__button:hover {
+    cursor: pointer;
+    color: #292929;
+    box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.1),
+    inset -3px -3px 5px rgba(241, 255, 255, 0.5);
 }

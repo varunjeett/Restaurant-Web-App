@@ -24,6 +24,10 @@
     background-color: rgb(4 11 31 / 57%);
 }
 
+.review__form > h1 {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 3.5rem;
+}
 
 .review__button{
     margin-top: 2%;
@@ -47,8 +51,8 @@
   }
 
 .review__form label{
-    display: flex;
-    width: 60%;
+    /* display: flex; */
+    /* width: 60%; */
 }
 
 @media screen and (max-width:600px)
