@@ -7,6 +7,11 @@
     justify-content: center;
     padding-top: 2%;
     padding-bottom: 2%;
+    background-image: url(https://i.pinimg.com/736x/fc/ad/c7/fcadc7d60ac774820fe31bf25b9c0d5c.jpg);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .review__form{
@@ -14,9 +19,15 @@
     width: 50vw;
     display: flex;
     flex-direction: column;
-    box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.1), -7px -7px 20px rgba(241, 255, 255, 1);
+    color: #bbf1fa;
+    color: aqua;
     align-items: center;
-    background: #eef9fc;
+    background-color: rgb(4 11 31 / 57%);
+}
+
+.review__form>h1{
+    font-family: 'Kaushan Script', cursive;
+    font-size: 3.5rem;
 }
 
 
@@ -30,10 +41,8 @@
     border-radius: 0.7rem;
     padding: 2%;
     transition: ease all 250ms;
-    box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.1),
-    -7px -7px 20px rgb(241, 255, 255);
     border: unset;
-    font-size: large;
+    font-size: 1.1rem;
 }
 
 .review__button:hover {
@@ -47,3 +56,12 @@
     display: flex;
     width: 60%;
 }
+
+@media screen and (max-width:600px)
+{
+    .review__form{
+        width: 70vw;
+        margin-right: 1.2rem;
+    }
+}
+

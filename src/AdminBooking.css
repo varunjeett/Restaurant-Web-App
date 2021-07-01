@@ -11,7 +11,7 @@
 
 .header__logo {
   margin-top: 3px;
-  width: 150px;
+  width: 12rem;
   object-fit: contain;
 }
 
@@ -19,8 +19,9 @@
   color: #0a8d48;
 }
 
-.admin__header > h2 {
+.admin__header>h2 {
   margin-top: 15px;
+  text-align: center;
 }
 
 .header__add__icon {
@@ -34,8 +35,9 @@
   align-items: center;
 }
 
-.header__admin__box > h5 {
+.header__admin__box>h5 {
   margin-top: -25px;
+  text-align: center;
 }
 
 .header__admin__link {
@@ -43,34 +45,107 @@
   color: black;
 }
 
-
 .single__booking {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding-top:20px;
+  padding-top: 20px;
   padding-bottom: 20px;
 }
-.searchBar{
-  padding-top:30px;
+
+.searchBar {
+  padding-top: 30px;
   padding-bottom: 20px;
   margin-left: 8.5%;
   margin-right: 12.25%;
   display: flex;
 }
-.searchBar >input{
+
+.searchBar>input {
   height: 30px;
   width: 100%;
-  background-color:#eff2f5;
+  background-color: #eff2f5;
   padding-left: 50px;
 }
 
-.single__booking > h1 {
-  margin: 30px 0;
-}
 
 .header__admin__box:hover {
   border-bottom: 1px black solid;
 }
 
+.content {
+  background-color: rgb(68 64 64 / 17%);
+}
+.single__booking{
+  width: 100%;
+}
+.booking_table{
+  width: 90%;
+}
+.table_header{
+  display: flex;
+  flex-direction: row;
+}
+
+.table_head_name {
+  width: 14%;
+  text-align: left;
+  border-right: 0px ;
+  background-color: whitesmoke;
+
+}
+
+.table_head_contact_num {
+  width: 14%;
+  text-align: left;
+  background-color: whitesmoke;
+}
+
+.table_head_email{
+  width: 14%;
+  text-align: left;
+  background-color: whitesmoke;
+}
+
+.table_head_booking_date{
+  width: 10%;
+  text-align: left;
+  background-color: whitesmoke;
+}
+
+.table_head_arrival_time{
+  width: 10%;
+  text-align: left;
+  background-color: whitesmoke;
+}
+.table_head_booking_id{
+  width: 14%;
+  text-align: left;
+  background-color: whitesmoke;
+}
+.table_head_delete{
+  width: 12.5%; 
+  text-align: left; 
+  background-color: whitesmoke;
+}
+
+@media screen and (max-width:600px)
+{
+  .admin__header>h2{
+    font-size: 1rem;
+  }
+  
+
+  .header__logo{
+    width: 6rem;
+  }
+}
+
+@media screen and (max-width:460px){
+  .header__logo{
+    margin-top: 2px;
+  }
+
+
+}

@@ -21,7 +21,7 @@ function Footer() {
 
       <div className="footer__contact">
         <h3>Developed By</h3>
-
+        <hr class="purple" ></hr>
         <div className="footer__contact__details">
           <div className="footer__contact__individual">
             <h5>
