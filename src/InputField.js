@@ -83,7 +83,7 @@ const InputField = forwardRef((props, ref) => {
           case "max":
             if (value.length > pair[1]) {
               setError(
-                `This field must be no longer than ${pair[1]} charactesr long`
+                `This field must be no longer than ${pair[1]} character long`
               );
               return false;
             }
