@@ -6,8 +6,8 @@ import footer__logo from "./Media/footer__logo.png";
 function Footer() {
   const e1 = "prabhjotlamba2001@gmail.com";
   const n1 = "8882717172";
-  const e2 = "goel261@gmail.com";
-  const n2 = "8851785099";
+  const e2 = "madhavaggarwalsng@gmail.com";
+  const n2 = "9501092281";
   const e3 = "sumitsaurabh9868@gmail.com";
   const n3 = "9871464772";
 
@@ -45,7 +45,7 @@ function Footer() {
 
           <div className="footer__contact__individual">
             <h5>
-              Kshitij Goel
+              Madhav Aggarwal
               <br />
               <a
                 className={"contact__link__footer"}
